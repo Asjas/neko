@@ -1,13 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import videojs from "video.js";
 import "videojs-youtube";
 import "video.js/dist/video-js.css";
 
 videojs.log.level("off");
 
-export const VideoPlayer = (props) => {
-  console.log(props);
+interface IVideoPlayerProps {
+  options: any;
+  onReady: any;
+}
 
+function VideoPlayer(props: any) {
+  const [muted, setMuted] = useState(false);
   const videoRef = React.useRef(null);
   const playerRef = React.useRef<any>(null);
   const { options, onReady } = props;
@@ -23,17 +27,18 @@ export const VideoPlayer = (props) => {
     }
   }, [options]);
 
-  React.useEffect(() => {
-    return () => {
+  React.useEffect(
+    () => () => {
       if (playerRef.current) {
         playerRef.current.dispose();
         playerRef.current = null;
       }
-    };
-  }, []);
+    },
+    [],
+  );
 
   return (
-    <div data-vjs-player>
+    <div>
       <video
         className="video-js vjs-default-skin vjs-16-9"
         ref={videoRef}
@@ -51,6 +56,6 @@ export const VideoPlayer = (props) => {
       />
     </div>
   );
-};
+}
 
 export default VideoPlayer;
