@@ -1,0 +1,19 @@
+version: "2.4"
+
+services:
+  db:
+    container_name: neko-db
+    image: postgres:14.0-alpine
+    ports:
+      - ${DB_PORT}:5432
+    volumes:
+      - db-data:/var/lib/postgresql
+    restart: always
+    environment:
+      POSTGRES_USER: ${DB_USER}
+      POSTGRES_PASSWORD: ${DB_PASS}
+      POSTGRES_DB: ${DB}
+
+volumes:
+  db-data:
+    external: false
