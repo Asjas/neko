@@ -1,48 +1,78 @@
 {
-  "private": true,
   "name": "remix-app-template",
-  "description": "",
-  "license": "",
+  "main": "dist/worker.js",
   "scripts": {
-    "build": "remix build",
+    "build": "npm run css:build && remix build",
     "dev": "remix watch",
     "postinstall": "remix setup cloudflare-workers",
     "build:worker": "esbuild --bundle --sourcemap --outdir=dist ./worker",
     "start": "miniflare --watch",
+    "watch:css": "postcss styles --base styles --dir app/styles -w",
+    "build:css": "postcss styles --base styles --dir app/styles --env production",
     "deploy": "npm run build && wrangler publish",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "check-types": "tsc",
+    "lint": "eslint --ext .js,.mjs,.ts,.tsx .",
+    "lint-fix": "npm run lint -- --fix",
+    "prettier": "prettier --ignore-path .eslintignore \"**/**/*.+(js|mjs|json|ts|tsx|md|mdx)\"",
+    "format": "npm run prettier -- --write",
+    "check-format": "npm run prettier -- --list-different",
+    "validate": "npm-run-all --parallel check-types check-format lint build"
   },
   "dependencies": {
-    "@remix-run/cloudflare-workers": "^0.19.3",
-    "@remix-run/react": "^0.19.3",
-    "eslint-config-asjas": "^0.0.25",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "react-router-dom": "6.0.0-beta.6",
-    "remix": "^0.19.3",
-    "video.js": "^7.15.4",
-    "videojs-youtube": "^2.6.1"
+    "@remix-run/cloudflare-workers": "0.19.3",
+    "@remix-run/react": "0.19.3",
+    "eslint-config-asjas": "0.0.25",
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
+    "react-router-dom": "6.0.0-beta.7",
+    "react-error-boundary": "3.1.3",
+    "remix": "0.19.3",
+    "video.js": "7.15.4",
+    "videojs-youtube": "2.6.1"
   },
   "devDependencies": {
-    "@babel/core": "^7.15.8",
-    "@cloudflare/workers-types": "^2.2.2",
-    "@remix-run/dev": "^0.19.3",
-    "@storybook/addon-actions": "^6.3.12",
-    "@storybook/addon-essentials": "^6.3.12",
-    "@storybook/addon-links": "^6.3.12",
-    "@storybook/react": "^6.3.12",
-    "@types/react": "^17.0.24",
-    "@types/react-dom": "^17.0.9",
-    "@types/video.js": "^7.3.27",
-    "babel-loader": "^8.2.2",
-    "esbuild": "^0.13.0",
-    "miniflare": "^1.4.1",
-    "typescript": "^4.1.2"
+    "@babel/core": "7.15.8",
+    "@cloudflare/workers-types": "3.0.0",
+    "@remix-run/dev": "0.19.3",
+    "@storybook/addon-actions": "6.3.12",
+    "@storybook/addon-essentials": "6.3.12",
+    "@storybook/addon-links": "6.3.12",
+    "@storybook/react": "6.3.12",
+    "@types/react": "17.0.30",
+    "@types/react-dom": "17.0.9",
+    "@types/video.js": "7.3.27",
+    "babel-loader": "8.2.2",
+    "autoprefixer": "10.3.7",
+    "concurrently": "6.3.0",
+    "cssnano": "5.0.8",
+    "esbuild": "0.13.8",
+    "miniflare": "1.4.1",
+    "husky": "7.0.2",
+    "lint-staged": "11.2.3",
+    "postcss": "8.3.9",
+    "postcss-cli": "9.0.1",
+    "postcss-flexbugs-fixes": "5.0.2",
+    "postcss-preset-env": "6.7.0",
+    "tailwindcss": "2.2.17",
+    "typescript": "4.4.4"
   },
   "engines": {
     "node": ">=14"
   },
-  "sideEffects": false,
-  "main": "dist/worker.js"
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run check-types && lint-staged && npm run build"
+    }
+  },
+  "lint-staged": {
+    "*.+(js|mjs|ts|tsx)": [
+      "eslint"
+    ],
+    "**/**/*.+(js|mjs|json|ts|tsx|md|mdx)": [
+      "prettier --write",
+      "git add"
+    ]
+  }
 }

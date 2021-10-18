@@ -1,0 +1,43 @@
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+html, body {
+  height: 100%;
+}
+
+* {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+  font-family: "Manrope";
+  max-width: 60ch;
+}
+
+html,
+body,
+div,
+header,
+nav,
+main,
+footer {
+  max-width: none;
+}
+
+[hidden] {
+  pointer-events: none;
+}
+
+.stack {
+  --margin-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.stack:only-child {
+  height: 100%;
+}
+
+.stack > * + * {
+  margin-top: var(--margin-top);
+}
