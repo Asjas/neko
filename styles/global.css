@@ -2,29 +2,32 @@
   outline: none;
 }
 
-html, body {
-  height: 100%;
-}
-
-* {
-  box-sizing: border-box;
-  -webkit-tap-highlight-color: transparent;
-  font-family: "Manrope";
-  max-width: 60ch;
+[hidden] {
+  pointer-events: none;
 }
 
 html,
-body,
-div,
-header,
-nav,
-main,
-footer {
-  max-width: none;
+body {
+  height: 100%;
 }
 
-[hidden] {
-  pointer-events: none;
+/* Custom Scrollbar Styles */
+body::-webkit-scrollbar {
+  width: 6px;
+}
+
+html {
+  scrollbar-width: thin;
+  scrollbar-color: hsl(37deg 100% 50%);
+}
+
+body::-webkit-scrollbar-track {
+  background: hsl(0deg 0% 10%);
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: hsl(37deg 100% 50%);
+  border: hsl(37deg 100% 50%);
 }
 
 .stack {

@@ -1,10 +1,11 @@
-name = "remix-cloudflare-workers"
+name = "neko-global"
 type = "javascript"
+compatibility_date = "2021-09-14"
 
-zone_id = ""
-account_id = ""
-route = ""
-workers_dev = true
+zone_id = "68564a31f3b81700e29b4c2820be5a9a"
+account_id = "d34e365e96c3cd636081f05b0a6b031a"
+route = "https://preview.neko.global/*"
+workers_dev = false
 
 [site]
 bucket = "./public"

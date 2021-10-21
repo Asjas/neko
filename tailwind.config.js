@@ -4,13 +4,17 @@ module.exports = {
   mode: "jit",
   theme: {
     extend: {
+      fontFamily: { display: ["Manrope"], body: ["Manrope"] },
+      colors: {
+        primary: "hsl(37deg 100% 50%)",
+        secondary: "hsl(0deg 0% 3%)",
+      },
       backgroundImage: {
         "hero-image": "url('/images/Leopard.jpg')",
       },
     },
   },
-  variants: {},
-  plugins: [],
+  plugins: [require("@tailwindcss/aspect-ratio")],
   corePlugins: {
     preflight: false,
   },

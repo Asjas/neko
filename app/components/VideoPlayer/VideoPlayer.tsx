@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import videojs from "video.js";
 import "videojs-youtube";
-import "video.js/dist/video-js.css";
+import videojsStylesheet from "video.js/dist/video-js.css";
 
 videojs.log.level("off");
 
@@ -21,9 +21,14 @@ function VideoPlayer(props: any) {
       const videoElement = videoRef.current;
       if (!videoElement) return;
 
-      const player = (playerRef.current = videojs(videoElement, options, () => {
-        onReady && onReady(player);
-      }));
+      const player = (playerRef.current = videojs(
+        videoElement,
+        { controlBar: { liveDisplay: true, pictureInPictureToggle: false }, ...options },
+        () => {
+          setMuted(true);
+          onReady && onReady(player);
+        },
+      ));
     }
   }, [options]);
 
@@ -44,18 +49,15 @@ function VideoPlayer(props: any) {
         ref={videoRef}
         controls={true}
         autoPlay={true}
-        muted={true}
         preload="auto"
+        muted={muted}
         loop={true}
-        data-setup='{
-          "techOrder": ["youtube"],
-          "sources": [{ "type": "video/youtube", "src": "https://www.youtube.com/watch?v=918Fmm21MQQ" }],
-          "fluid": true,
-          "youtube": { "muted": true, "controls": 0, "iv_load_policy": 1 },
-        }'
+        data-setup='{ "techOrder": ["youtube"], "fluid": true, "sources": [{ "type": "video/youtube", "src": "https://www.youtube.com/watch?v=918Fmm21MQQ" }], "youtube": { "muted": true, "controls": 0, "iv_load_policy": 1 } }'
       />
     </div>
   );
 }
 
 export default VideoPlayer;
+
+VideoPlayer.links = [{ rel: "stylesheet", href: videojsStylesheet }];

@@ -10,8 +10,3 @@ export default {
 const Template: ComponentStory<typeof VideoPlayer> = (args) => <VideoPlayer {...args} />;
 
 export const Primary = Template.bind({});
-
-Primary.args = {
-  primary: true,
-  label: "Button",
-};
