@@ -7,7 +7,9 @@ export default function Nav() {
         <li className="w-auto">
           <NavLink
             className={(props) =>
-              `text-xl text-white no-underline ${props.isActive ? "nav-link__active" : "opacity-50 hover:opacity-100"}`
+              `text-xl text-white tracking-wide font-medium no-underline ${
+                props.isActive ? "nav-link__active" : "opacity-50 hover:opacity-100"
+              }`
             }
             to="/"
           >
@@ -17,7 +19,9 @@ export default function Nav() {
         <li>
           <NavLink
             className={(props) =>
-              `text-xl text-white no-underline ${props.isActive ? "nav-link__active" : "opacity-50 hover:opacity-100"}`
+              `text-xl text-white tracking-wide font-medium no-underline ${
+                props.isActive ? "nav-link__active" : "opacity-50 hover:opacity-100"
+              }`
             }
             to="/technology"
           >
@@ -27,7 +31,9 @@ export default function Nav() {
         <li>
           <NavLink
             className={(props) =>
-              `text-xl text-white no-underline ${props.isActive ? "nav-link__active" : "opacity-50 hover:opacity-100"}`
+              `text-xl text-white no-underline tracking-wide font-medium ${
+                props.isActive ? "nav-link__active" : "opacity-50 hover:opacity-100"
+              }`
             }
             to="/sunglasses"
           >
@@ -37,7 +43,9 @@ export default function Nav() {
         <li>
           <NavLink
             className={(props) =>
-              `text-xl text-white no-underline ${props.isActive ? "nav-link__active" : "opacity-50 hover:opacity-100"}`
+              `text-xl text-white tracking-wide font-medium no-underline ${
+                props.isActive ? "nav-link__active" : "opacity-50 hover:opacity-100"
+              }`
             }
             to="/prescription-frames"
           >
@@ -47,7 +55,9 @@ export default function Nav() {
         <li>
           <NavLink
             className={(props) =>
-              `text-xl text-white no-underline ${props.isActive ? "nav-link__active" : "opacity-50 hover:opacity-100"}`
+              `text-xl text-white tracking-wide no-underline ${
+                props.isActive ? "nav-link__active" : "opacity-50 hover:opacity-100"
+              }`
             }
             to="/about"
           >

@@ -65,8 +65,8 @@ export default function Header() {
             </NavLink>
             <Nav />
           </div>
-          <div className="self-end w-6/12 translate-y-16 lg:translate-y-48 xl:translate-y-64 lg:translate-x-14">
-            <h1 className="m-0 text-2xl text-right text-white sm:text-3xl sm:w-8/12 md:w-9/12 lg:w-11/12 md:text-4xl lg:text-7xl 2xl:text-9xl">
+          <div className="self-end w-6/12 translate-y-16 xl:w-5/12 lg:translate-y-48 xl:translate-y-64 lg:translate-x-14">
+            <h1 className="m-0 text-2xl font-bold text-right text-white sm:text-3xl sm:w-8/12 md:w-9/12 lg:w-11/12 md:text-4xl lg:text-7xl 2xl:text-9xl">
               Challenge The Limits of Imagination
             </h1>
           </div>

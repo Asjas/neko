@@ -69,8 +69,10 @@ export default function Footer() {
       <div className="px-4 py-12 mx-auto max-w-7xl sm:px-6 lg:py-16 lg:px-8">
         <div className="xl:grid xl:grid-cols-3 xl:gap-8">
           <div className="space-y-8 xl:col-span-1">
-            <h2 className="m-0 text-2xl text-white md:text-4xl lg:text-6xl">Trust is our guiding light</h2>
-            <p className="text-base font-light text-white md:text-xl">
+            <h2 className="m-0 text-2xl font-semibold tracking-wide text-white md:text-4xl lg:text-6xl">
+              Trust is our guiding light
+            </h2>
+            <p className="text-base tracking-wide text-white font-extralight md:text-xl">
               We deeply believe the world lacks trust and there is a desperate need to do something about it.
             </p>
             <div className="flex space-x-6">
@@ -89,7 +91,10 @@ export default function Footer() {
                 <ul role="list" className="p-0 mt-8 space-y-4">
                   {navigation.neko.map((item) => (
                     <li key={item.name}>
-                      <Link to={item.href} className="text-white no-underline opacity-50 hover:opacity-100">
+                      <Link
+                        to={item.href}
+                        className="font-medium tracking-wider text-white no-underline opacity-50 hover:opacity-100"
+                      >
                         {item.name}
                       </Link>
                     </li>
@@ -101,7 +106,10 @@ export default function Footer() {
                 <ul role="list" className="p-0 mt-8 space-y-4">
                   {navigation["inside neko"].map((item) => (
                     <li key={item.name}>
-                      <Link to={item.href} className="text-white no-underline opacity-50 hover:opacity-100">
+                      <Link
+                        to={item.href}
+                        className="font-medium tracking-wider text-white no-underline opacity-50 hover:opacity-100"
+                      >
                         {item.name}
                       </Link>
                     </li>
@@ -115,7 +123,10 @@ export default function Footer() {
                 <ul role="list" className="p-0 mt-8 space-y-4">
                   {navigation["get help"].map((item) => (
                     <li key={item.name}>
-                      <Link to={item.href} className="text-white no-underline opacity-50 hover:opacity-100">
+                      <Link
+                        to={item.href}
+                        className="font-medium tracking-wider text-white no-underline opacity-50 hover:opacity-100"
+                      >
                         {item.name}
                       </Link>
                     </li>
@@ -126,7 +137,9 @@ export default function Footer() {
           </div>
         </div>
         <div className="pt-8 mt-12 border-t border-gray-200">
-          <p className="text-sm text-gray-400">&copy; NEKO EYEWEAR, Inc. All rights reserved.</p>
+          <p className="text-sm font-light tracking-wide text-gray-400">
+            &copy; NEKO EYEWEAR, Inc. All rights reserved.
+          </p>
         </div>
       </div>
     </footer>
