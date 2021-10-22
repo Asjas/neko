@@ -5,7 +5,7 @@ import Nav from "~/components/Nav";
 export default function Header() {
   return (
     <header>
-      <div className="bg-local bg-center bg-no-repeat bg-cover bg-hero-image aspect-w-16 aspect-h-9">
+      <div className="bg-local bg-black bg-center bg-no-repeat bg-cover bg-hero-image aspect-w-16 aspect-h-9">
         <div className="flex flex-col p-4 md:p-8 lg:p-14">
           <div className="flex justify-between">
             <NavLink to="/">
@@ -65,9 +65,9 @@ export default function Header() {
             </NavLink>
             <Nav />
           </div>
-          <div className="self-end w-6/12 translate-y-16 xl:w-5/12 lg:translate-y-48 xl:translate-y-64 lg:translate-x-14">
-            <h1 className="m-0 text-2xl font-bold text-right text-white sm:text-3xl sm:w-8/12 md:w-9/12 lg:w-11/12 md:text-4xl lg:text-7xl 2xl:text-9xl">
-              Challenge The Limits of Imagination
+          <div className="self-end w-6/12 translate-x-4 translate-y-32 sm:translate-y-40 md:translate-y-24 md:w-5/12 lg:translate-y-36 xl:translate-y-64 lg:translate-x-14">
+            <h1 className="w-10/12 text-4xl font-bold text-right text-white lg:w-11/12 3xl:w-10/12 md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl 3xl:text-9xl">
+              Challenge The Limits
             </h1>
           </div>
         </div>

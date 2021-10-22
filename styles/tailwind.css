@@ -58,6 +58,26 @@ body {
   @apply inline-block w-6 -translate-x-2 border-2 border-solid border-primary;
 }
 
+.orange-dot::before {
+  content: "";
+  @apply inline-block w-4 h-4 border-4 border-solid rounded-full border-primary;
+}
+
+.orange-dot__hover {
+  content: "";
+  @apply absolute inline-block w-2 h-2 border-4 border-solid rounded-full bg-primary border-primary;
+}
+
+.orange-dot__hover::before {
+  content: "";
+  @apply relative inline-block w-6 h-6 border-4 border-solid rounded-full opacity-50 right-3 bottom-3 bg-primary border-primary;
+}
+
+.orange-dot__hover::after {
+  content: "";
+  @apply relative inline-block w-10 h-10 border-4 border-solid rounded-full opacity-25 right-5 bottom-12 bg-primary border-primary;
+}
+
 .footer-heading {
   @apply -translate-x-6;
 }
