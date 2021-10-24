@@ -62,7 +62,7 @@
     "babel-loader": "8.2.3",
     "concurrently": "6.3.0",
     "cssnano": "5.0.8",
-    "esbuild": "0.13.8",
+    "esbuild": "0.13.9",
     "eslint-config-asjas": "0.0.25",
     "husky": "7.0.4",
     "jest": "27.3.0",
