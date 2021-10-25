@@ -1,4 +1,8 @@
-const CACHE_NAME = "Remix Assets Mon Oct 25 13:43:13 SAST 2021";
+const CACHE_NAME = "Remix Assets Mon Oct 25 16:53:04 SAST 2021";
+
+self.addEventListener("install", () => {
+  self.skipWaiting();
+});
 
 // Update the service worker and clear the cache when a new service worker is activated
 self.addEventListener("activate", (event) => {
