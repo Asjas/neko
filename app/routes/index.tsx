@@ -3,7 +3,7 @@ import type { MetaFunction } from "remix";
 import Header from "~/components/Header";
 import VideoPlayer from "~/components/VideoPlayer";
 import ProductFeaturesShowcase from "~/components/ProductFeaturesShowcase";
-import ProductCategories from "~/components/productCategories";
+import ProductCategories from "~/components/ProductCategories";
 import Footer from "~/components/Footer";
 
 import { ClientOnly } from "~/hooks/useHydrated";
