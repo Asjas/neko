@@ -1,5 +1,6 @@
 name = "neko-global"
 type = "javascript"
+usage_model = "unbound"
 compatibility_date = "2021-09-14"
 
 zone_id = "68564a31f3b81700e29b4c2820be5a9a"
@@ -17,3 +18,6 @@ watch_dir = "build"
 
 [build.upload]
 format="service-worker"
+
+[vars]
+NODE_ENV="production"
