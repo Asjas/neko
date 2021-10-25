@@ -14,7 +14,7 @@ export default function ProductFeaturesShowcase() {
       </div>
       {/* Frame Information Dot 2 */}
       <div className="absolute z-10 opacity-50 right-28 top-28 hover:opacity-100">
-        <div className="right-72 top-40 orange-dot__hover"></div>
+        <div className="right-72 top-48 orange-dot__hover"></div>
         <div className="w-64 p-4">
           <h3 className="text-lg font-light tracking-wide text-white">Frame Lenses</h3>
           <p className="text-sm font-light tracking-wide text-gray-400">
