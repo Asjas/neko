@@ -106,5 +106,8 @@ dist
 # Remix build directory
 build/
 
+# Remix styles build directory
+app/styles/
+
 # Keystone cache Directory
 .keystone
