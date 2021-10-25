@@ -1,4 +1,4 @@
-const CACHE_NAME = "Remix Assets Thu 21 Oct 2021 12:48:50 SAST";
+const CACHE_NAME = "Remix Assets Mon Oct 25 13:43:13 SAST 2021";
 
 // Update the service worker and clear the cache when a new service worker is activated
 self.addEventListener("activate", (event) => {
