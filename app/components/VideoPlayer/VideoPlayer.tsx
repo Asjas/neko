@@ -1,26 +1,20 @@
-import { useState } from "react";
-import { Stream } from "@cloudflare/stream-react";
+import ReactPlayer from "react-player";
 
-function VideoPlayer(props: any) {
-  const [stop, setStopped] = useState(false);
-
-  const videoIdOrSignedUrl = "616cb12aac6d7baab9ea6869e131ab01";
-
-  function handleOnEnded(event: any) {
-    console.log(event);
-  }
-
+function VideoPlayer() {
   return (
-    <div>
-      <Stream
-        controls
-        // autoplay
-        onPlay={(e: any) => console.log(e)}
-        onEnded={(e: any) => console.log(e)}
-        preload="auto"
-        muted={true}
+    <div className="relative aspect-w-16 aspect-h-9">
+      <ReactPlayer
+        url="https://streamable.com/vuf9ox"
+        className="absolute top-0 left-0"
+        config={{ file: { attributes: { disablepictureinpicture: "true" } } }}
+        width="100%"
+        height="100%"
+        playing={true}
+        volume={0}
+        pip={false}
         loop={true}
-        src={videoIdOrSignedUrl}
+        muted={true}
+        controls
       />
     </div>
   );
