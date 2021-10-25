@@ -20,6 +20,7 @@ export default function handleRequest(
   responseHeaders.set("X-Powered-By", "PHP/3.0.18");
   responseHeaders.set("Content-Type", "text/html; charset=utf-8");
   responseHeaders.set("Content-Length", String(bytes.length));
+  responseHeaders.set("X-NODE-ENV", String(process.env.NODE_ENV));
 
   return new Response(html, {
     status: responseStatusCode,

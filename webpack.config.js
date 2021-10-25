@@ -1,39 +1,40 @@
-let path = require("path");
+const path = require("path");
 
 module.exports = {
   target: "webworker",
   entry: "./worker/entry",
   devtool: "cheap-module-source-map",
+  mode: process.env.NODE_ENV,
   node: false,
   output: {
     filename: "worker.js",
-    path: path.join(__dirname, "dist")
+    path: path.join(__dirname, "dist"),
   },
   resolve: {
-    extensions: [".ts", ".tsx", ".js", ".jsx"]
+    extensions: [".ts", ".tsx", ".js", ".jsx"],
   },
   module: {
     rules: [
       {
         test: /\.js$/,
         loader: "esbuild-loader",
-        options: { loader: "js" }
+        options: { loader: "js" },
       },
       {
         test: /\.jsx$/,
         loader: "esbuild-loader",
-        options: { loader: "jsx" }
+        options: { loader: "jsx" },
       },
       {
         test: /\.ts$/,
         loader: "esbuild-loader",
-        options: { loader: "ts" }
+        options: { loader: "ts" },
       },
       {
         test: /\.tsx$/,
         loader: "esbuild-loader",
-        options: { loader: "tsx" }
-      }
-    ]
-  }
+        options: { loader: "tsx" },
+      },
+    ],
+  },
 };

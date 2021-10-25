@@ -1,4 +1,5 @@
 import { Link } from "remix";
+import { ArrowRightIcon } from "@heroicons/react/solid";
 
 interface ProductCategory {
   title: string;
@@ -17,6 +18,10 @@ function ProductCategory({ productCategory }: { productCategory: ProductCategory
         <p className="pl-4 mt-2 mb-8 text-sm font-semibold tracking-wide text-gray-500">
           {productCategory.totalProducts} products
         </p>
+        <div className="flex items-center self-end pr-4 mb-4 hover:underline text-primary">
+          <span className="text-sm font-bold tracking-wide align-middle">Catalogue</span>
+          <ArrowRightIcon className="w-4 h-4" />
+        </div>
         <div className="flex-grow w-full overflow-hidden bg-white sm:aspect-w-2 sm:aspect-h-1 sm:h-64 lg:aspect-w-1 lg:aspect-h-1">
           <img
             src={productCategory.imageSrc}

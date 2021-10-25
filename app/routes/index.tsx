@@ -67,7 +67,7 @@ export default function Index() {
           </div>
         </section>
 
-        <section className="mx-auto bg-white max-w-7xl">
+        <section className="px-4 mx-auto bg-white sm:px-6 lg:px-8 max-w-7xl">
           <ProductCategories />
         </section>
       </main>
