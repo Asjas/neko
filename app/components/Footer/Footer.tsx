@@ -77,9 +77,9 @@ export default function Footer() {
             </p>
             <div className="flex space-x-6">
               {navigation.social.map((item) => (
-                <a key={item.name} href={item.href} className="text-white opacity-50 hover:opacity-100">
+                <a key={item.name} href={item.href} className="text-white rounded-sm opacity-50 hover:opacity-100">
                   <span className="sr-only">{item.name}</span>
-                  <item.icon className="w-6 h-6" aria-hidden="true" />
+                  <item.icon className="w-8 h-8 p-1" aria-hidden="true" />
                 </a>
               ))}
             </div>
@@ -87,13 +87,13 @@ export default function Footer() {
           <div className="grid grid-cols-2 gap-8 mt-12 xl:mt-0 xl:col-span-2">
             <div className="md:grid md:grid-cols-2 md:gap-8">
               <div>
-                <h3 className="text-xl font-semibold tracking-wide text-white uppercase footer-heading">Neko</h3>
+                <h3 className="p-1 text-xl font-semibold tracking-wide text-white uppercase footer-heading">Neko</h3>
                 <ul role="list" className="p-0 mt-8 space-y-4">
                   {navigation.neko.map((item) => (
                     <li key={item.name}>
                       <Link
                         to={item.href}
-                        className="font-medium tracking-wider text-white no-underline opacity-50 hover:opacity-100"
+                        className="p-1 font-medium tracking-wider text-white no-underline rounded-sm opacity-50 hover:opacity-100"
                       >
                         {item.name}
                       </Link>
@@ -102,13 +102,15 @@ export default function Footer() {
                 </ul>
               </div>
               <div className="mt-12 md:mt-0">
-                <h3 className="text-xl font-semibold tracking-wide text-white uppercase footer-heading">Inside Neko</h3>
+                <h3 className="p-1 text-xl font-semibold tracking-wide text-white uppercase footer-heading">
+                  Inside Neko
+                </h3>
                 <ul role="list" className="p-0 mt-8 space-y-4">
                   {navigation["inside neko"].map((item) => (
                     <li key={item.name}>
                       <Link
                         to={item.href}
-                        className="font-medium tracking-wider text-white no-underline opacity-50 hover:opacity-100"
+                        className="p-1 font-medium tracking-wider text-white no-underline rounded-sm opacity-50 hover:opacity-100"
                       >
                         {item.name}
                       </Link>
@@ -119,13 +121,15 @@ export default function Footer() {
             </div>
             <div className="md:grid md:grid-cols-2 md:gap-8">
               <div>
-                <h3 className="text-xl font-semibold tracking-wide text-white uppercase footer-heading">Get Help</h3>
+                <h3 className="p-1 text-xl font-semibold tracking-wide text-white uppercase footer-heading">
+                  Get Help
+                </h3>
                 <ul role="list" className="p-0 mt-8 space-y-4">
                   {navigation["get help"].map((item) => (
                     <li key={item.name}>
                       <Link
                         to={item.href}
-                        className="font-medium tracking-wider text-white no-underline opacity-50 hover:opacity-100"
+                        className="p-1 font-medium tracking-wider text-white no-underline rounded-sm opacity-50 hover:opacity-100"
                       >
                         {item.name}
                       </Link>

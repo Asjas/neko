@@ -7,7 +7,7 @@ export default function Nav() {
         <li className="w-auto">
           <NavLink
             className={(props) =>
-              `text-xl text-white tracking-wide font-medium no-underline ${
+              `text-xl text-white p-1 rounded-sm tracking-wide font-medium no-underline ${
                 props.isActive ? "nav-link__active" : "opacity-50 hover:opacity-100"
               }`
             }
@@ -19,7 +19,7 @@ export default function Nav() {
         <li>
           <NavLink
             className={(props) =>
-              `text-xl text-white tracking-wide font-medium no-underline ${
+              `text-xl text-white p-1 rounded-sm tracking-wide font-medium no-underline ${
                 props.isActive ? "nav-link__active" : "opacity-50 hover:opacity-100"
               }`
             }
@@ -31,7 +31,7 @@ export default function Nav() {
         <li>
           <NavLink
             className={(props) =>
-              `text-xl text-white no-underline tracking-wide font-medium ${
+              `text-xl text-white p-1 rounded-sm no-underline tracking-wide font-medium ${
                 props.isActive ? "nav-link__active" : "opacity-50 hover:opacity-100"
               }`
             }
@@ -43,7 +43,7 @@ export default function Nav() {
         <li>
           <NavLink
             className={(props) =>
-              `text-xl text-white tracking-wide font-medium no-underline ${
+              `text-xl text-white p-1 rounded-sm tracking-wide font-medium no-underline ${
                 props.isActive ? "nav-link__active" : "opacity-50 hover:opacity-100"
               }`
             }
@@ -55,7 +55,7 @@ export default function Nav() {
         <li>
           <NavLink
             className={(props) =>
-              `text-xl text-white tracking-wide no-underline ${
+              `text-xl text-white p-1 rounded-sm tracking-wide no-underline ${
                 props.isActive ? "nav-link__active" : "opacity-50 hover:opacity-100"
               }`
             }

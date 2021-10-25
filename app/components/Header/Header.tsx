@@ -8,7 +8,7 @@ export default function Header() {
       <div className="bg-local bg-black bg-center bg-no-repeat bg-cover bg-hero-image aspect-w-16 aspect-h-9">
         <div className="flex flex-col p-4 md:p-8 lg:p-14">
           <div className="flex justify-between">
-            <NavLink to="/">
+            <NavLink className="h-12 p-2 rounded-sm" to="/">
               <svg className="h-auto w-14 md:w-28" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 103.959 27.757">
                 <g id="Group_1" data-name="Group 1" transform="translate(-292.036 -280.745)">
                   <path

@@ -3,6 +3,7 @@ import type { MetaFunction } from "remix";
 import Header from "~/components/Header";
 import VideoPlayer from "~/components/VideoPlayer";
 import ProductFeaturesShowcase from "~/components/ProductFeaturesShowcase";
+import ProductCategories from "~/components/productCategories";
 import Footer from "~/components/Footer";
 
 import { ClientOnly } from "~/hooks/useHydrated";
@@ -53,8 +54,10 @@ export default function Index() {
         <section className="bg-white">
           <div className="px-4 py-16 mx-auto max-w-7xl sm:py-24 sm:px-6 lg:px-8">
             <div className="text-center">
-              <p className="text-base font-semibold tracking-wider uppercase text-primary">Shop your favourite style</p>
-              <h2 className="mt-1 text-4xl font-extrabold sm:text-5xl sm:tracking-tight lg:text-6xl">
+              <p className="text-base font-semibold tracking-wider uppercase drop-shadow-sm text-primary">
+                Shop your favourite style
+              </p>
+              <h2 className="mt-1 text-4xl font-extrabold drop-shadow-2xl sm:text-5xl sm:tracking-tight lg:text-6xl">
                 Experience the world and beyond
               </h2>
               <p className="max-w-xl mx-auto mt-5 text-xl tracking-wide text-gray-700">
@@ -62,6 +65,10 @@ export default function Index() {
               </p>
             </div>
           </div>
+        </section>
+
+        <section className="mx-auto bg-white max-w-7xl">
+          <ProductCategories />
         </section>
       </main>
 

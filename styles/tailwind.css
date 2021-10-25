@@ -61,6 +61,19 @@ body {
   @apply text-white bg-primary;
 }
 
+a[href],
+area[href],
+input:not([disabled]),
+select:not([disabled]),
+textarea:not([disabled]),
+button:not([disabled]),
+iframe,
+[tabindex] {
+  &:not([tabindex="-1"]) {
+    @apply focus:outline-none focus:ring-4 focus:ring-primary;
+  }
+}
+
 .nav-link__active::before {
   content: "";
   @apply inline-block w-6 -translate-x-2 border-2 border-solid border-primary;
