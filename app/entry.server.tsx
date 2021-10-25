@@ -10,8 +10,6 @@ export default function handleRequest(
 ) {
   let markup = ReactDOMServer.renderToString(<RemixServer context={remixContext} url={request.url} />);
 
-  console.log(process.env.NODE_ENV);
-
   if (process.env.NODE_ENV !== "production") {
     responseHeaders.set("Cache-Control", "no-store");
   }
