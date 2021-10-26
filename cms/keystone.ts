@@ -8,7 +8,6 @@ export default withAuth(
   config({
     db: {
       provider: "postgresql",
-      // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
       url: process.env.DATABASE_URL!,
     },
     ui: {
