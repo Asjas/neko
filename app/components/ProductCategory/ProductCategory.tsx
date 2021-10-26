@@ -1,14 +1,14 @@
 import { Link } from "remix";
 import { ArrowRightIcon } from "@heroicons/react/solid";
 
-interface ProductCategory {
+interface IProductCategory {
   title: string;
   totalProducts: number;
   imageSrc: string;
   imageAlt: string;
 }
 
-function ProductCategory({ productCategory }: { productCategory: ProductCategory }) {
+export default function ProductCategory({ productCategory }: { productCategory: IProductCategory }) {
   return (
     <Link to="/" className="flex flex-auto no-underline bg-gray-100 rounded-md ring-offset-1">
       <div className="flex flex-col flex-auto">
@@ -19,7 +19,7 @@ function ProductCategory({ productCategory }: { productCategory: ProductCategory
           {productCategory.totalProducts} products
         </p>
         <div className="flex items-center self-end pr-4 mb-4 hover:underline text-primary">
-          <span className="text-sm font-bold tracking-wide align-middle">Catalogue</span>
+          <span className="text-sm font-bold tracking-wide underline align-middle">Catalogue</span>
           <ArrowRightIcon className="w-4 h-4" />
         </div>
         <div className="flex-grow w-full overflow-hidden bg-white sm:aspect-w-2 sm:aspect-h-1 sm:h-64 lg:aspect-w-1 lg:aspect-h-1">
@@ -33,5 +33,3 @@ function ProductCategory({ productCategory }: { productCategory: ProductCategory
     </Link>
   );
 }
-
-export default ProductCategory;

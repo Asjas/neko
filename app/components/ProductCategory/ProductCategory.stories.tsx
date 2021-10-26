@@ -1,3 +1,5 @@
+/* eslint-disable import/no-extraneous-dependencies */
+/* eslint-disable react/function-component-definition */
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 
 import ProductCategory from "./ProductCategory";

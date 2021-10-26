@@ -1,6 +1,6 @@
 import ReactPlayer from "react-player";
 
-function VideoPlayer() {
+export default function VideoPlayer() {
   return (
     <div className="relative aspect-w-16 aspect-h-9">
       <ReactPlayer
@@ -19,5 +19,3 @@ function VideoPlayer() {
     </div>
   );
 }
-
-export default VideoPlayer;

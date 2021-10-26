@@ -10,9 +10,7 @@ describe("<ProductCategory />", () => {
       imageAlt: "Leopard in the jungle",
     };
 
-    const { debug } = render(<ProductCategory productCategory={productCategory} />);
-
-    debug();
+    render(<ProductCategory productCategory={productCategory} />);
 
     const imageAltText = screen.getByAltText(productCategory.imageAlt);
     expect(imageAltText).toBeInTheDocument();
@@ -24,9 +22,16 @@ describe("<ProductCategory />", () => {
     expect(productCategoryTotalProducts).toBeInTheDocument();
   });
 
-  // it("matches snapshot", () => {
-  //   render(<ProductCategory />);
+  it("matches snapshot", () => {
+    const productCategory = {
+      title: "Leopard",
+      imageSrc: "https://tailwindui.com/img/ecommerce-images/home-page-02-edition-01.jpg",
+      totalProducts: 20,
+      imageAlt: "Leopard in the jungle",
+    };
 
-  //   expect(screen.getByLabelText("Video Player")).toMatchSnapshot();
-  // });
+    const { container } = render(<ProductCategory productCategory={productCategory} />);
+
+    expect(container).toMatchSnapshot();
+  });
 });

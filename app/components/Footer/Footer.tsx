@@ -88,7 +88,7 @@ export default function Footer() {
             <div className="md:grid md:grid-cols-2 md:gap-8">
               <div>
                 <h3 className="p-1 text-xl font-semibold tracking-wide text-white uppercase footer-heading">Neko</h3>
-                <ul role="list" className="p-0 mt-8 space-y-4">
+                <ul className="p-0 mt-8 space-y-4">
                   {navigation.neko.map((item) => (
                     <li key={item.name}>
                       <Link
@@ -105,7 +105,7 @@ export default function Footer() {
                 <h3 className="p-1 text-xl font-semibold tracking-wide text-white uppercase footer-heading">
                   Inside Neko
                 </h3>
-                <ul role="list" className="p-0 mt-8 space-y-4">
+                <ul className="p-0 mt-8 space-y-4">
                   {navigation["inside neko"].map((item) => (
                     <li key={item.name}>
                       <Link
@@ -124,7 +124,7 @@ export default function Footer() {
                 <h3 className="p-1 text-xl font-semibold tracking-wide text-white uppercase footer-heading">
                   Get Help
                 </h3>
-                <ul role="list" className="p-0 mt-8 space-y-4">
+                <ul className="p-0 mt-8 space-y-4">
                   {navigation["get help"].map((item) => (
                     <li key={item.name}>
                       <Link

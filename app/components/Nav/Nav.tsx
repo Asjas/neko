@@ -1,12 +1,16 @@
 import { NavLink } from "remix";
 
+interface NavLinkProps {
+  isActive: boolean;
+}
+
 export default function Nav() {
   return (
     <nav>
-      <ul role="list" className="flex-col hidden p-0 m-0 text-right uppercase list-none md:flex">
+      <ul className="flex-col hidden p-0 m-0 text-right uppercase list-none md:flex">
         <li className="w-auto">
           <NavLink
-            className={(props) =>
+            className={(props: NavLinkProps) =>
               `text-xl text-white p-1 rounded-sm tracking-wide font-medium no-underline ${
                 props.isActive ? "nav-link__active" : "opacity-50 hover:opacity-100"
               }`
@@ -18,7 +22,7 @@ export default function Nav() {
         </li>
         <li>
           <NavLink
-            className={(props) =>
+            className={(props: NavLinkProps) =>
               `text-xl text-white p-1 rounded-sm tracking-wide font-medium no-underline ${
                 props.isActive ? "nav-link__active" : "opacity-50 hover:opacity-100"
               }`
@@ -30,7 +34,7 @@ export default function Nav() {
         </li>
         <li>
           <NavLink
-            className={(props) =>
+            className={(props: NavLinkProps) =>
               `text-xl text-white p-1 rounded-sm no-underline tracking-wide font-medium ${
                 props.isActive ? "nav-link__active" : "opacity-50 hover:opacity-100"
               }`
@@ -42,7 +46,7 @@ export default function Nav() {
         </li>
         <li>
           <NavLink
-            className={(props) =>
+            className={(props: NavLinkProps) =>
               `text-xl text-white p-1 rounded-sm tracking-wide font-medium no-underline ${
                 props.isActive ? "nav-link__active" : "opacity-50 hover:opacity-100"
               }`
@@ -54,7 +58,7 @@ export default function Nav() {
         </li>
         <li>
           <NavLink
-            className={(props) =>
+            className={(props: NavLinkProps) =>
               `text-xl text-white p-1 rounded-sm tracking-wide no-underline ${
                 props.isActive ? "nav-link__active" : "opacity-50 hover:opacity-100"
               }`

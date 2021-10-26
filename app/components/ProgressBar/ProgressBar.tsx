@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-non-null-assertion */
 import type { MutableRefObject } from "react";
 import { useEffect, useRef } from "react";
 import { useTransition } from "remix";
@@ -18,10 +19,10 @@ function useProgress(): MutableRefObject<HTMLElement | undefined> {
 
     el.current.style.width = `0%`;
 
-    let updateWidth = (ms: number) => {
+    const updateWidth = (ms: number) => {
       timeout.current = setTimeout(() => {
-        let width = parseFloat(el.current!.style.width);
-        let percent = !isNaN(width) ? 10 + 0.9 * width : 0;
+        const width = parseFloat(el.current!.style.width);
+        const percent = !isNaN(width) ? 10 + 0.9 * width : 0;
 
         el.current!.style.width = `${percent}%`;
 

@@ -20,3 +20,10 @@ coverage
 # don't lint tooling config files
 remix.config.js
 jest.setup.js
+jest.config.js
+postcss.config.js
+webpack.config.js
+tailwind.config.js
+
+worker/index.js
+public/sw.js

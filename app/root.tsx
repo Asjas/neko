@@ -1,29 +1,29 @@
-import type { LinksFunction } from "remix";
+/* eslint-disable react/require-default-props */
+import { ReactNode } from "react";
 import { Meta, Links, Scripts, LiveReload, useCatch, Outlet } from "remix";
+import type { LinksFunction } from "remix";
 
 import modernNormalizeStylesUrl from "./styles/modern-normalize.css";
 import globalStylesUrl from "./styles/global.css";
 import tailwindStylesUrl from "./styles/tailwind.css";
 
-export let links: LinksFunction = () => {
-  return [
-    {
-      rel: "stylesheet",
-      href: modernNormalizeStylesUrl,
-    },
-    { rel: "stylesheet", href: tailwindStylesUrl },
-    { rel: "stylesheet", href: globalStylesUrl },
-  ];
-};
+export const links: LinksFunction = () => [
+  {
+    rel: "stylesheet",
+    href: modernNormalizeStylesUrl,
+  },
+  { rel: "stylesheet", href: tailwindStylesUrl },
+  { rel: "stylesheet", href: globalStylesUrl },
+];
 
-function Document({ children, title }: { children: React.ReactNode; title?: string }) {
+function Document({ children, title = null }: { children: ReactNode; title?: string | null }) {
   return (
     <html lang="en">
       <head>
         {/* Common HEAD Markup */}
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        {title ? <title>{title}</title> : null}
+        <title>{title}</title>
 
         {/* Control the behavior of search engine crawling and indexing */}
         <meta name="robots" content="index,follow" />
@@ -79,7 +79,7 @@ export default function App() {
 }
 
 export function CatchBoundary() {
-  let caught = useCatch();
+  const caught = useCatch();
 
   switch (caught.status) {
     case 401:
@@ -98,6 +98,7 @@ export function CatchBoundary() {
 }
 
 export function ErrorBoundary({ error }: { error: Error }) {
+  // eslint-disable-next-line no-console
   console.error(error);
 
   return (

@@ -1,4 +1,4 @@
-const CACHE_NAME = "Remix Assets Mon Oct 25 16:53:04 SAST 2021";
+const CACHE_NAME = "Remix Assets Tue Oct 26 11:34:51 SAST 2021";
 
 self.addEventListener("install", () => {
   self.skipWaiting();

@@ -1,3 +1,5 @@
+/* eslint-disable react/function-component-definition */
+/* eslint-disable import/no-extraneous-dependencies */
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 
 import VideoPlayer from "./VideoPlayer";

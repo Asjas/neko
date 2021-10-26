@@ -8,13 +8,13 @@ export default function handleRequest(
   responseHeaders: Headers,
   remixContext: EntryContext,
 ) {
-  let markup = ReactDOMServer.renderToString(<RemixServer context={remixContext} url={request.url} />);
+  const view = ReactDOMServer.renderToString(<RemixServer context={remixContext} url={request.url} />);
 
   if (process.env.NODE_ENV !== "production") {
     responseHeaders.set("Cache-Control", "no-store");
   }
 
-  const html = `<!DOCTYPE html>${markup}`;
+  const html = `<!DOCTYPE html>${view}`;
   const bytes = new TextEncoder().encode(html);
 
   responseHeaders.set("X-Powered-By", "PHP/3.0.18");
