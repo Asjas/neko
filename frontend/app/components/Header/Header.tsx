@@ -1,6 +1,6 @@
 import { NavLink } from "remix";
 
-import Nav from "~/components/Nav";
+import Nav from "../Nav";
 
 export default function Header() {
   return (

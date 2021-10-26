@@ -1,12 +1,12 @@
 import type { MetaFunction } from "remix";
 
-import Header from "~/components/Header";
-import VideoPlayer from "~/components/VideoPlayer";
-import ProductFeaturesShowcase from "~/components/ProductFeaturesShowcase";
-import ProductCategories from "~/components/ProductCategories";
-import Footer from "~/components/Footer";
+import Header from "../components/Header";
+import VideoPlayer from "../components/VideoPlayer";
+import ProductFeaturesShowcase from "../components/ProductFeaturesShowcase";
+import ProductCategories from "../components/ProductCategories";
+import Footer from "../components/Footer";
 
-import { ClientOnly } from "~/hooks/useHydrated";
+import { ClientOnly } from "../hooks/useHydrated";
 
 export const meta: MetaFunction = () => ({
   title: "Neko EYEWEAR",
