@@ -3,9 +3,9 @@ import ProductCategory from "../ProductCategory/ProductCategory";
 export default function ProductCategories() {
   const productCategories = [
     { id: 1, title: "Leopard", totalProducts: 53, imageSrc: "/images/cheetah-catalogue.jpg", imageAlt: "Leopard" },
-    { id: 2, title: "Lion", totalProducts: 9, imageSrc: "/images/cheetah-catalogue.jpg", imageAlt: "Lion" },
+    { id: 2, title: "Serval", totalProducts: 9, imageSrc: "/images/cheetah-catalogue.jpg", imageAlt: "Serval" },
     { id: 3, title: "Cheetah", totalProducts: 22, imageSrc: "/images/cheetah-catalogue.jpg", imageAlt: "Cheetah" },
-    { id: 4, title: "Cougar", totalProducts: 101, imageSrc: "/images/cheetah-catalogue.jpg", imageAlt: "Cougar" },
+    { id: 4, title: "Lynx", totalProducts: 101, imageSrc: "/images/cheetah-catalogue.jpg", imageAlt: "Lynx" },
   ];
 
   return (
