@@ -1,8 +1,10 @@
 import "dotenv/config";
 import { config } from "@keystone-next/keystone";
 
-import { lists } from "./schema";
 import { withAuth, session } from "./auth";
+
+import { User } from "./schemas/User";
+import { Catalogue } from "./schemas/Catalogue";
 
 export default withAuth(
   config({
@@ -13,7 +15,17 @@ export default withAuth(
     ui: {
       isAccessAllowed: (context) => !!context.session?.data,
     },
-    lists,
+    lists: {
+      User,
+      Catalogue,
+    },
+    images: {
+      upload: "local",
+      local: {
+        storagePath: "public/images",
+        baseUrl: "/images",
+      },
+    },
     session,
   }),
 );
