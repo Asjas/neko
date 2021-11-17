@@ -10,7 +10,10 @@ interface IProductCategory {
 
 export default function ProductCategory({ productCategory }: { productCategory: IProductCategory }) {
   return (
-    <Link to="/" className="flex flex-auto no-underline bg-gray-100 rounded-md ring-offset-1">
+    <Link
+      to={`/catalogue/${productCategory.title.toLowerCase()}`}
+      className="flex flex-auto no-underline bg-gray-100 rounded-md w-60 ring-offset-1"
+    >
       <div className="flex flex-col flex-auto">
         <h3 className="pl-4 mt-4 mb-0 text-lg font-bold tracking-wide text-black uppercase lg:text-xl xl:text-2xl">
           <span>{productCategory.title}</span>

@@ -1,112 +1,117 @@
 @tailwind base;
 
-@font-face {
-  font-family: Manrope;
-  src: url(/fonts/Manrope-ExtraLight.woff) format("woff"), url(/fonts/Manrope-ExtraLight.woff2) format("woff2");
-  font-weight: 200;
-  font-style: normal;
-}
+@layer base {
+  @font-face {
+    font-family: Manrope;
+    src: url(/fonts/Manrope-ExtraLight.woff) format("woff"), url(/fonts/Manrope-ExtraLight.woff2) format("woff2");
+    font-weight: 200;
+    font-style: normal;
+  }
 
-@font-face {
-  font-family: Manrope;
-  src: url(/fonts/Manrope-Light.woff) format("woff"), url(/fonts/Manrope-Light.woff2) format("woff2");
-  font-weight: 300;
-  font-style: normal;
-}
+  @font-face {
+    font-family: Manrope;
+    src: url(/fonts/Manrope-Light.woff) format("woff"), url(/fonts/Manrope-Light.woff2) format("woff2");
+    font-weight: 300;
+    font-style: normal;
+  }
 
-@font-face {
-  font-family: Manrope;
-  src: url(/fonts/Manrope-Regular.woff) format("woff"), url(/fonts/Manrope-Regular.woff2) format("woff2");
-  font-weight: 400;
-  font-style: normal;
-}
+  @font-face {
+    font-family: Manrope;
+    src: url(/fonts/Manrope-Regular.woff) format("woff"), url(/fonts/Manrope-Regular.woff2) format("woff2");
+    font-weight: 400;
+    font-style: normal;
+  }
 
-@font-face {
-  font-family: Manrope;
-  src: url(/fonts/Manrope-Medium.woff) format("woff"), url(/fonts/Manrope-Medium.woff2) format("woff2");
-  font-weight: 500;
-  font-style: normal;
-}
+  @font-face {
+    font-family: Manrope;
+    src: url(/fonts/Manrope-Medium.woff) format("woff"), url(/fonts/Manrope-Medium.woff2) format("woff2");
+    font-weight: 500;
+    font-style: normal;
+  }
 
-@font-face {
-  font-family: Manrope;
-  src: url(/fonts/Manrope-SemiBold.woff) format("woff"), url(/fonts/Manrope-SemiBold.woff2) format("woff2");
-  font-weight: 600;
-  font-style: normal;
-}
+  @font-face {
+    font-family: Manrope;
+    src: url(/fonts/Manrope-SemiBold.woff) format("woff"), url(/fonts/Manrope-SemiBold.woff2) format("woff2");
+    font-weight: 600;
+    font-style: normal;
+  }
 
-@font-face {
-  font-family: Manrope;
-  src: url(/fonts/Manrope-Bold.woff) format("woff"), url(/fonts/Manrope-Bold.woff2) format("woff2");
-  font-weight: 700;
-  font-style: normal;
-}
+  @font-face {
+    font-family: Manrope;
+    src: url(/fonts/Manrope-Bold.woff) format("woff"), url(/fonts/Manrope-Bold.woff2) format("woff2");
+    font-weight: 700;
+    font-style: normal;
+  }
 
-@font-face {
-  font-family: Manrope;
-  src: url(/fonts/Manrope-ExtraBold.woff) format("woff"), url(/fonts/Manrope-ExtraBold.woff2) format("woff2");
-  font-weight: 800;
-  font-style: normal;
-}
+  @font-face {
+    font-family: Manrope;
+    src: url(/fonts/Manrope-ExtraBold.woff) format("woff"), url(/fonts/Manrope-ExtraBold.woff2) format("woff2");
+    font-weight: 800;
+    font-style: normal;
+  }
 
-body {
-  @apply text-secondary font-body;
-}
+  body {
+    @apply text-secondary font-body;
+  }
 
-::-moz-selection {
-  @apply text-white bg-primary;
-}
+  ::-moz-selection {
+    @apply text-white bg-primary;
+  }
 
-::selection {
-  @apply text-white bg-primary;
-}
+  ::selection {
+    @apply text-white bg-primary;
+  }
 
-a[href],
-area[href],
-input:not([disabled]),
-select:not([disabled]),
-textarea:not([disabled]),
-button:not([disabled]),
-iframe,
-[tabindex] {
-  &:not([tabindex="-1"]) {
-    @apply focus:outline-none focus:ring-4 focus:ring-primary;
+  a[href],
+  area[href],
+  input:not([disabled]),
+  select:not([disabled]),
+  textarea:not([disabled]),
+  button:not([disabled]),
+  iframe,
+  [tabindex] {
+    &:not([tabindex="-1"]) {
+      @apply focus:outline-none focus:ring-4 focus:ring-primary;
+    }
   }
 }
 
-.nav-link__active::before {
-  content: "";
-  @apply inline-block w-6 -translate-x-2 border-2 border-solid border-primary;
-}
-
-.orange-dot::before {
-  content: "";
-  @apply inline-block w-4 h-4 border-4 border-solid rounded-full border-primary;
-}
-
-.orange-dot__hover {
-  content: "";
-  @apply absolute inline-block w-2 h-2 border-4 border-solid rounded-full bg-primary border-primary;
-}
-
-.orange-dot__hover::before {
-  content: "";
-  @apply relative inline-block w-6 h-6 border-4 border-solid rounded-full opacity-50 right-3 bottom-3 bg-primary border-primary;
-}
-
-.orange-dot__hover::after {
-  content: "";
-  @apply relative inline-block w-10 h-10 border-4 border-solid rounded-full opacity-25 right-5 bottom-12 bg-primary border-primary;
-}
-
-.footer-heading {
-  @apply -translate-x-6;
-}
-
-.footer-heading::before {
-  content: "";
-  @apply inline-block w-6 translate-x-6 translate-y-4 border border-solid border-primary;
-}
-
 @tailwind components;
+
+@layer components {
+  .nav-link__active::before {
+    content: "";
+    @apply inline-block w-6 -translate-x-2 border-2 border-solid border-primary;
+  }
+
+  .orange-dot::before {
+    content: "";
+    @apply inline-block w-4 h-4 border-4 border-solid rounded-full border-primary;
+  }
+
+  .orange-dot__hover {
+    content: "";
+    @apply absolute inline-block w-2 h-2 border-4 border-solid rounded-full bg-primary border-primary;
+  }
+
+  .orange-dot__hover::before {
+    content: "";
+    @apply relative inline-block w-6 h-6 border-4 border-solid rounded-full opacity-50 right-3 bottom-3 bg-primary border-primary;
+  }
+
+  .orange-dot__hover::after {
+    content: "";
+    @apply relative inline-block w-10 h-10 border-4 border-solid rounded-full opacity-25 right-5 bottom-12 bg-primary border-primary;
+  }
+
+  .footer-heading {
+    @apply -translate-x-6;
+  }
+
+  .footer-heading::before {
+    content: "";
+    @apply inline-block w-6 translate-x-6 translate-y-4 border border-solid border-primary;
+  }
+}
+
 @tailwind utilities;

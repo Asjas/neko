@@ -9,7 +9,7 @@ export default function ProductCategories() {
   ];
 
   return (
-    <section className="flex flex-wrap gap-8 mb-40">
+    <section className="flex flex-wrap gap-8 mb-40 auto-cols-fr">
       {productCategories.map((productCategory) => (
         <ProductCategory key={productCategory.id} productCategory={productCategory} />
       ))}

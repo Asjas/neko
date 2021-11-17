@@ -41,20 +41,20 @@ function Document({ children, title = null }: { children: ReactNode; title?: str
         <meta name="theme-color" content="#000000" />
 
         {/* Fonts */}
-        <link rel="preload" as="font" href="fonts/Manrope-Bold.woff2" type="font/woff2" crossOrigin="anonymous" />
-        <link rel="preload" as="font" href="fonts/Manrope-ExtraBold.woff2" type="font/woff2" crossOrigin="anonymous" />
-        <link rel="preload" as="font" href="fonts/Manrope-ExtraLight.woff2" type="font/woff2" crossOrigin="anonymous" />
-        <link rel="preload" as="font" href="fonts/Manrope-Light.woff2" type="font/woff2" crossOrigin="anonymous" />
-        <link rel="preload" as="font" href="fonts/Manrope-Medium.woff2" type="font/woff2" crossOrigin="anonymous" />
-        <link rel="preload" as="font" href="fonts/Manrope-Regular.woff2" type="font/woff2" crossOrigin="anonymous" />
-        <link rel="preload" as="font" href="fonts/Manrope-SemiBold.woff2" type="font/woff2" crossOrigin="anonymous" />
-        <link rel="preload" as="font" href="fonts/Manrope-Bold.woff" type="font/woff" crossOrigin="anonymous" />
-        <link rel="preload" as="font" href="fonts/Manrope-ExtraBold.woff" type="font/woff" crossOrigin="anonymous" />
-        <link rel="preload" as="font" href="fonts/Manrope-ExtraLight.woff" type="font/woff" crossOrigin="anonymous" />
-        <link rel="preload" as="font" href="fonts/Manrope-Light.woff" type="font/woff" crossOrigin="anonymous" />
-        <link rel="preload" as="font" href="fonts/Manrope-Medium.woff" type="font/woff" crossOrigin="anonymous" />
-        <link rel="preload" as="font" href="fonts/Manrope-Regular.woff" type="font/woff" crossOrigin="anonymous" />
-        <link rel="preload" as="font" href="fonts/Manrope-SemiBold.woff" type="font/woff" crossOrigin="anonymous" />
+        <link rel="preload" as="font" href="/fonts/Manrope-Bold.woff2" type="font/woff2" crossOrigin="anonymous" />
+        <link rel="preload" as="font" href="/fonts/Manrope-ExtraBold.woff2" type="font/woff2" crossOrigin="anonymous" />
+        <link rel="preload" as="font" href="/fonts/Manrope-ExtraLight.woff2" type="font/woff2" crossOrigin="anonymous" />
+        <link rel="preload" as="font" href="/fonts/Manrope-Light.woff2" type="font/woff2" crossOrigin="anonymous" />
+        <link rel="preload" as="font" href="/fonts/Manrope-Medium.woff2" type="font/woff2" crossOrigin="anonymous" />
+        <link rel="preload" as="font" href="/fonts/Manrope-Regular.woff2" type="font/woff2" crossOrigin="anonymous" />
+        <link rel="preload" as="font" href="/fonts/Manrope-SemiBold.woff2" type="font/woff2" crossOrigin="anonymous" />
+        <link rel="preload" as="font" href="/fonts/Manrope-Bold.woff" type="font/woff" crossOrigin="anonymous" />
+        <link rel="preload" as="font" href="/fonts/Manrope-ExtraBold.woff" type="font/woff" crossOrigin="anonymous" />
+        <link rel="preload" as="font" href="/fonts/Manrope-ExtraLight.woff" type="font/woff" crossOrigin="anonymous" />
+        <link rel="preload" as="font" href="/fonts/Manrope-Light.woff" type="font/woff" crossOrigin="anonymous" />
+        <link rel="preload" as="font" href="/fonts/Manrope-Medium.woff" type="font/woff" crossOrigin="anonymous" />
+        <link rel="preload" as="font" href="/fonts/Manrope-Regular.woff" type="font/woff" crossOrigin="anonymous" />
+        <link rel="preload" as="font" href="/fonts/Manrope-SemiBold.woff" type="font/woff" crossOrigin="anonymous" />
 
         {/* 3rd Party Scripts */}
         <script crossOrigin="anonymous" src="https://polyfill.io/v3/polyfill.min.js" />
