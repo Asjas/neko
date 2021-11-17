@@ -6,6 +6,7 @@ type User {
   name: String
   email: String
   password: PasswordState
+  isAdmin: Boolean
 }
 
 type PasswordState {
@@ -24,6 +25,7 @@ input UserWhereInput {
   id: IDFilter
   name: StringFilter
   email: StringFilter
+  isAdmin: BooleanFilter
 }
 
 input IDFilter {
@@ -71,10 +73,16 @@ input NestedStringFilter {
   not: NestedStringFilter
 }
 
+input BooleanFilter {
+  equals: Boolean
+  not: BooleanFilter
+}
+
 input UserOrderByInput {
   id: OrderDirection
   name: OrderDirection
   email: OrderDirection
+  isAdmin: OrderDirection
 }
 
 enum OrderDirection {
@@ -86,6 +94,7 @@ input UserUpdateInput {
   name: String
   email: String
   password: String
+  isAdmin: Boolean
 }
 
 input UserUpdateArgs {
@@ -97,18 +106,37 @@ input UserCreateInput {
   name: String
   email: String
   password: String
+  isAdmin: Boolean
 }
 
 type Catalogue {
   id: ID!
   name: String
+  image: ImageFieldOutput
   catalogueItem(
-    where: CatalogueWhereInput! = {}
-    orderBy: [CatalogueOrderByInput!]! = []
+    where: CatalogueItemWhereInput! = {}
+    orderBy: [CatalogueItemOrderByInput!]! = []
     take: Int
     skip: Int! = 0
-  ): [Catalogue!]
-  catalogueItemCount(where: CatalogueWhereInput! = {}): Int
+  ): [CatalogueItem!]
+  catalogueItemCount(where: CatalogueItemWhereInput! = {}): Int
+}
+
+interface ImageFieldOutput {
+  id: ID!
+  filesize: Int!
+  width: Int!
+  height: Int!
+  extension: ImageExtension!
+  ref: String!
+  url: String!
+}
+
+enum ImageExtension {
+  jpg
+  png
+  webp
+  gif
 }
 
 input CatalogueWhereUniqueInput {
@@ -121,13 +149,13 @@ input CatalogueWhereInput {
   NOT: [CatalogueWhereInput!]
   id: IDFilter
   name: StringFilter
-  catalogueItem: CatalogueManyRelationFilter
+  catalogueItem: CatalogueItemManyRelationFilter
 }
 
-input CatalogueManyRelationFilter {
-  every: CatalogueWhereInput
-  some: CatalogueWhereInput
-  none: CatalogueWhereInput
+input CatalogueItemManyRelationFilter {
+  every: CatalogueItemWhereInput
+  some: CatalogueItemWhereInput
+  none: CatalogueItemWhereInput
 }
 
 input CatalogueOrderByInput {
@@ -137,14 +165,25 @@ input CatalogueOrderByInput {
 
 input CatalogueUpdateInput {
   name: String
-  catalogueItem: CatalogueRelateToManyForUpdateInput
+  image: ImageFieldInput
+  catalogueItem: CatalogueItemRelateToManyForUpdateInput
 }
 
-input CatalogueRelateToManyForUpdateInput {
-  disconnect: [CatalogueWhereUniqueInput!]
-  set: [CatalogueWhereUniqueInput!]
-  create: [CatalogueCreateInput!]
-  connect: [CatalogueWhereUniqueInput!]
+input ImageFieldInput {
+  upload: Upload
+  ref: String
+}
+
+"""
+The `Upload` scalar type represents a file upload.
+"""
+scalar Upload
+
+input CatalogueItemRelateToManyForUpdateInput {
+  disconnect: [CatalogueItemWhereUniqueInput!]
+  set: [CatalogueItemWhereUniqueInput!]
+  create: [CatalogueItemCreateInput!]
+  connect: [CatalogueItemWhereUniqueInput!]
 }
 
 input CatalogueUpdateArgs {
@@ -154,12 +193,141 @@ input CatalogueUpdateArgs {
 
 input CatalogueCreateInput {
   name: String
-  catalogueItem: CatalogueRelateToManyForCreateInput
+  image: ImageFieldInput
+  catalogueItem: CatalogueItemRelateToManyForCreateInput
 }
 
-input CatalogueRelateToManyForCreateInput {
-  create: [CatalogueCreateInput!]
-  connect: [CatalogueWhereUniqueInput!]
+input CatalogueItemRelateToManyForCreateInput {
+  create: [CatalogueItemCreateInput!]
+  connect: [CatalogueItemWhereUniqueInput!]
+}
+
+type CatalogueItem {
+  id: ID!
+  name: String
+  image: ImageFieldOutput
+  martiniImageLink: String
+  catalogue: Catalogue
+}
+
+input CatalogueItemWhereUniqueInput {
+  id: ID
+}
+
+type LocalImageFieldOutput implements ImageFieldOutput {
+  id: ID!
+  filesize: Int!
+  width: Int!
+  height: Int!
+  extension: ImageExtension!
+  ref: String!
+  url: String!
+}
+
+type CloudImageFieldOutput implements ImageFieldOutput {
+  id: ID!
+  filesize: Int!
+  width: Int!
+  height: Int!
+  extension: ImageExtension!
+  ref: String!
+  url: String!
+}
+
+input CatalogueItemWhereInput {
+  AND: [CatalogueItemWhereInput!]
+  OR: [CatalogueItemWhereInput!]
+  NOT: [CatalogueItemWhereInput!]
+  id: IDFilter
+  name: StringFilter
+  martiniImageLink: StringFilter
+  catalogue: CatalogueWhereInput
+}
+
+input CatalogueItemOrderByInput {
+  id: OrderDirection
+  name: OrderDirection
+  martiniImageLink: OrderDirection
+}
+
+input CatalogueItemUpdateInput {
+  name: String
+  image: ImageFieldInput
+  martiniImageLink: String
+  catalogue: CatalogueRelateToOneForUpdateInput
+}
+
+input CatalogueRelateToOneForUpdateInput {
+  create: CatalogueCreateInput
+  connect: CatalogueWhereUniqueInput
+  disconnect: Boolean
+}
+
+input CatalogueItemUpdateArgs {
+  where: CatalogueItemWhereUniqueInput!
+  data: CatalogueItemUpdateInput!
+}
+
+input CatalogueItemCreateInput {
+  name: String
+  image: ImageFieldInput
+  martiniImageLink: String
+  catalogue: CatalogueRelateToOneForCreateInput
+}
+
+input CatalogueRelateToOneForCreateInput {
+  create: CatalogueCreateInput
+  connect: CatalogueWhereUniqueInput
+}
+
+type Technology {
+  id: ID!
+  field1: String
+  field2: String
+  field3: String
+  field4: String
+}
+
+input TechnologyWhereUniqueInput {
+  id: ID
+}
+
+input TechnologyWhereInput {
+  AND: [TechnologyWhereInput!]
+  OR: [TechnologyWhereInput!]
+  NOT: [TechnologyWhereInput!]
+  id: IDFilter
+  field1: StringFilter
+  field2: StringFilter
+  field3: StringFilter
+  field4: StringFilter
+}
+
+input TechnologyOrderByInput {
+  id: OrderDirection
+  field1: OrderDirection
+  field2: OrderDirection
+  field3: OrderDirection
+  field4: OrderDirection
+}
+
+input TechnologyUpdateInput {
+  field1: String
+  field2: String
+  field3: String
+  field4: String
+}
+
+input TechnologyUpdateArgs {
+  where: TechnologyWhereUniqueInput!
+  data: TechnologyUpdateInput!
+}
+
+input TechnologyCreateInput {
+  field1: String
+  field2: String
+  field3: String
+  field4: String
 }
 
 """
@@ -186,6 +354,26 @@ type Mutation {
   updateCatalogues(data: [CatalogueUpdateArgs!]!): [Catalogue]
   deleteCatalogue(where: CatalogueWhereUniqueInput!): Catalogue
   deleteCatalogues(where: [CatalogueWhereUniqueInput!]!): [Catalogue]
+  createCatalogueItem(data: CatalogueItemCreateInput!): CatalogueItem
+  createCatalogueItems(data: [CatalogueItemCreateInput!]!): [CatalogueItem]
+  updateCatalogueItem(
+    where: CatalogueItemWhereUniqueInput!
+    data: CatalogueItemUpdateInput!
+  ): CatalogueItem
+  updateCatalogueItems(data: [CatalogueItemUpdateArgs!]!): [CatalogueItem]
+  deleteCatalogueItem(where: CatalogueItemWhereUniqueInput!): CatalogueItem
+  deleteCatalogueItems(
+    where: [CatalogueItemWhereUniqueInput!]!
+  ): [CatalogueItem]
+  createTechnology(data: TechnologyCreateInput!): Technology
+  createTechnologies(data: [TechnologyCreateInput!]!): [Technology]
+  updateTechnology(
+    where: TechnologyWhereUniqueInput!
+    data: TechnologyUpdateInput!
+  ): Technology
+  updateTechnologies(data: [TechnologyUpdateArgs!]!): [Technology]
+  deleteTechnology(where: TechnologyWhereUniqueInput!): Technology
+  deleteTechnologies(where: [TechnologyWhereUniqueInput!]!): [Technology]
   endSession: Boolean!
   authenticateUserWithPassword(
     email: String!
@@ -232,6 +420,22 @@ type Query {
   ): [Catalogue!]
   catalogue(where: CatalogueWhereUniqueInput!): Catalogue
   cataloguesCount(where: CatalogueWhereInput! = {}): Int
+  catalogueItems(
+    where: CatalogueItemWhereInput! = {}
+    orderBy: [CatalogueItemOrderByInput!]! = []
+    take: Int
+    skip: Int! = 0
+  ): [CatalogueItem!]
+  catalogueItem(where: CatalogueItemWhereUniqueInput!): CatalogueItem
+  catalogueItemsCount(where: CatalogueItemWhereInput! = {}): Int
+  technologies(
+    where: TechnologyWhereInput! = {}
+    orderBy: [TechnologyOrderByInput!]! = []
+    take: Int
+    skip: Int! = 0
+  ): [Technology!]
+  technology(where: TechnologyWhereUniqueInput!): Technology
+  technologiesCount(where: TechnologyWhereInput! = {}): Int
   keystone: KeystoneMeta!
   authenticatedItem: AuthenticatedItem
 }

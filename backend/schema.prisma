@@ -13,16 +13,45 @@ generator client {
 }
 
 model User {
-  id       String @id @default(cuid())
-  name     String @default("")
-  email    String @unique @default("")
+  id       String  @id @default(cuid())
+  name     String  @default("")
+  email    String  @unique @default("")
   password String
+  isAdmin  Boolean @default(false)
 }
 
 model Catalogue {
-  id            String      @id @default(cuid())
-  name          String      @default("")
-  catalogueItem Catalogue[] @relation("Catalogue_catalogueItem_Catalogue_catalogueItem")
-  Catalogue     Catalogue?  @relation("Catalogue_catalogueItem_Catalogue_catalogueItem", fields: [catalogueId], references: [id])
-  catalogueId   String?
+  id              String          @id @default(cuid())
+  name            String          @default("")
+  image_filesize  Int?
+  image_extension String?
+  image_width     Int?
+  image_height    Int?
+  image_mode      String?
+  image_id        String?
+  catalogueItem   CatalogueItem[] @relation("CatalogueItem_catalogue")
+}
+
+model CatalogueItem {
+  id               String     @id @default(cuid())
+  name             String     @default("")
+  image_filesize   Int?
+  image_extension  String?
+  image_width      Int?
+  image_height     Int?
+  image_mode       String?
+  image_id         String?
+  martiniImageLink String     @default("")
+  catalogue        Catalogue? @relation("CatalogueItem_catalogue", fields: [catalogueId], references: [id])
+  catalogueId      String?    @map("catalogue")
+
+  @@index([catalogueId])
+}
+
+model Technology {
+  id     String @id @default(cuid())
+  field1 String @default("")
+  field2 String @default("")
+  field3 String @default("")
+  field4 String @default("")
 }

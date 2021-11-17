@@ -1,22 +1,14 @@
 import { list } from "@keystone-next/keystone";
-import { text, relationship } from "@keystone-next/keystone/fields";
+import { text, image, relationship } from "@keystone-next/keystone/fields";
 
 export const CatalogueItem = list({
   fields: {
-    name: text({ validation: { isRequired: true } }),
+    name: text({ label: "Catalogue Item Name", validation: { isRequired: true } }),
+    image: image({ label: "Catalogue Item Image" }),
+    martiniImageLink: text({ label: "Martini Image Link", validation: { isRequired: true } }),
     catalogue: relationship({
       ref: "Catalogue.catalogueItem",
-      ui: {
-        displayMode: "cards",
-        cardFields: ["image", "altText"],
-        inlineCreate: { fields: ["image", "altText"] },
-        inlineEdit: { fields: ["image", "altText"] },
-      },
+      many: false,
     }),
-  },
-  ui: {
-    listView: {
-      initialColumns: ["name"],
-    },
   },
 });

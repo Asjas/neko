@@ -1,5 +1,5 @@
 import { list } from "@keystone-next/keystone";
-import { text, relationship, password } from "@keystone-next/keystone/fields";
+import { text, checkbox, password } from "@keystone-next/keystone/fields";
 
 export const User = list({
   fields: {
@@ -10,10 +10,11 @@ export const User = list({
       isFilterable: true,
     }),
     password: password({ validation: { isRequired: true } }),
+    isAdmin: checkbox(),
   },
   ui: {
     listView: {
-      initialColumns: ["name"],
+      initialColumns: ["name", "email", "isAdmin"],
     },
   },
 });

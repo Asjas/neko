@@ -5,6 +5,8 @@ import { withAuth, session } from "./auth";
 
 import { User } from "./schemas/User";
 import { Catalogue } from "./schemas/Catalogue";
+import { CatalogueItem } from "./schemas/CatalogueItem";
+import { Technology } from "./schemas/Technology";
 
 export default withAuth(
   config({
@@ -18,6 +20,8 @@ export default withAuth(
     lists: {
       User,
       Catalogue,
+      CatalogueItem,
+      Technology,
     },
     images: {
       upload: "local",
