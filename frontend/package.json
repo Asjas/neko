@@ -36,7 +36,7 @@
     "react-error-boundary": "3.1.4",
     "react-player": "2.9.0",
     "react-router-dom": "6.0.2",
-    "remix": "0.19.3"
+    "remix": "0.21.0"
   },
   "devDependencies": {
     "@babel/core": "7.16.0",
