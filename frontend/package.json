@@ -39,7 +39,7 @@
     "remix": "0.19.3"
   },
   "devDependencies": {
-    "@babel/core": "7.15.8",
+    "@babel/core": "7.16.0",
     "@cloudflare/workers-types": "3.0.0",
     "@remix-run/dev": "0.19.3",
     "@storybook/addon-actions": "6.3.12",
