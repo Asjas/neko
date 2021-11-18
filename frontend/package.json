@@ -64,7 +64,7 @@
     "lint-staged": "11.2.4",
     "miniflare": "1.4.1",
     "postcss": "8.3.11",
-    "postcss-cli": "9.0.1",
+    "postcss-cli": "9.0.2",
     "postcss-flexbugs-fixes": "5.0.2",
     "postcss-preset-env": "6.7.0",
     "rimraf": "3.0.2",
