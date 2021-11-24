@@ -41,7 +41,7 @@
   "devDependencies": {
     "@babel/core": "7.16.0",
     "@cloudflare/workers-types": "3.2.0",
-    "@remix-run/dev": "1.0.4",
+    "@remix-run/dev": "1.0.5",
     "@storybook/addon-actions": "6.3.12",
     "@storybook/addon-essentials": "6.3.12",
     "@storybook/addon-links": "6.3.12",
