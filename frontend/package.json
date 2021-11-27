@@ -28,7 +28,7 @@
   },
   "dependencies": {
     "@heroicons/react": "1.0.5",
-    "@remix-run/cloudflare-workers": "1.0.5",
+    "@remix-run/cloudflare-workers": "1.0.6",
     "@remix-run/react": "1.0.6",
     "postcss-nested": "5.0.6",
     "react": "17.0.2",
