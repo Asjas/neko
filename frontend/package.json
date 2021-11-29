@@ -60,7 +60,7 @@
     "esbuild": "0.14.0",
     "eslint-config-asjas": "1.0.0",
     "husky": "7.0.4",
-    "jest": "27.3.1",
+    "jest": "27.4.0",
     "lint-staged": "12.1.2",
     "miniflare": "1.4.1",
     "postcss": "8.4.4",
