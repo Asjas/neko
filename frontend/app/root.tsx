@@ -1,6 +1,6 @@
 /* eslint-disable react/require-default-props */
 import { ReactNode } from "react";
-import { Meta, Links, Scripts, LiveReload, useCatch, Outlet } from "remix";
+import { Meta, Links, ScrollRestoration, Scripts, LiveReload, useCatch, Outlet } from "remix";
 import type { LinksFunction } from "remix";
 
 import modernNormalizeStylesUrl from "./styles/modern-normalize.css";
@@ -43,7 +43,13 @@ function Document({ children, title = null }: { children: ReactNode; title?: str
         {/* Fonts */}
         <link rel="preload" as="font" href="/fonts/Manrope-Bold.woff2" type="font/woff2" crossOrigin="anonymous" />
         <link rel="preload" as="font" href="/fonts/Manrope-ExtraBold.woff2" type="font/woff2" crossOrigin="anonymous" />
-        <link rel="preload" as="font" href="/fonts/Manrope-ExtraLight.woff2" type="font/woff2" crossOrigin="anonymous" />
+        <link
+          rel="preload"
+          as="font"
+          href="/fonts/Manrope-ExtraLight.woff2"
+          type="font/woff2"
+          crossOrigin="anonymous"
+        />
         <link rel="preload" as="font" href="/fonts/Manrope-Light.woff2" type="font/woff2" crossOrigin="anonymous" />
         <link rel="preload" as="font" href="/fonts/Manrope-Medium.woff2" type="font/woff2" crossOrigin="anonymous" />
         <link rel="preload" as="font" href="/fonts/Manrope-Regular.woff2" type="font/woff2" crossOrigin="anonymous" />
@@ -63,6 +69,7 @@ function Document({ children, title = null }: { children: ReactNode; title?: str
       </head>
       <body>
         {children}
+        <ScrollRestoration />
         <Scripts />
         {process.env.NODE_ENV === "development" && <LiveReload />}
       </body>
