@@ -111,3 +111,6 @@ app/styles/
 
 # Keystone cache Directory
 .keystone
+
+# Cloudflare cache directory
+.mf

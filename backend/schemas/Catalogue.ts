@@ -1,5 +1,5 @@
-import { list } from "@keystone-next/keystone";
-import { text, relationship, image } from "@keystone-next/keystone/fields";
+import { list } from "@keystone-6/core";
+import { text, relationship, image } from "@keystone-6/core/fields";
 
 export const Catalogue = list({
   fields: {

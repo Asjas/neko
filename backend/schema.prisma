@@ -32,17 +32,12 @@ model Catalogue {
 }
 
 model CatalogueItem {
-  id               String     @id @default(cuid())
-  name             String     @default("")
-  image_filesize   Int?
-  image_extension  String?
-  image_width      Int?
-  image_height     Int?
-  image_mode       String?
-  image_id         String?
-  martiniImageLink String     @default("")
-  catalogue        Catalogue? @relation("CatalogueItem_catalogue", fields: [catalogueId], references: [id])
-  catalogueId      String?    @map("catalogue")
+  id                  String     @id @default(cuid())
+  name                String     @default("")
+  responsiveImageLink String     @default("")
+  martiniImageLink    String     @default("")
+  catalogue           Catalogue? @relation("CatalogueItem_catalogue", fields: [catalogueId], references: [id])
+  catalogueId         String?    @map("catalogue")
 
   @@index([catalogueId])
 }
@@ -53,4 +48,10 @@ model Technology {
   field2 String @default("")
   field3 String @default("")
   field4 String @default("")
+}
+
+model Page {
+  id      String @id @default(cuid())
+  name    String @default("")
+  content Json   @default("[{\"type\":\"paragraph\",\"children\":[{\"text\":\"\"}]}]")
 }

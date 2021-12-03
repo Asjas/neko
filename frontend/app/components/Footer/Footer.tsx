@@ -3,9 +3,8 @@ import { Link } from "remix";
 const navigation = {
   neko: [
     { name: "Home", href: "/" },
-    { name: "Technology", href: "/technology" },
-    { name: "Sunglasses", href: "/sunglasses" },
-    { name: "Prescription Frames", href: "/prescription-frames" },
+    { name: "Technology", href: "#technology" },
+    { name: "Catalogue", href: "#catalogue" },
     { name: "About", href: "/about" },
   ],
   "inside neko": [

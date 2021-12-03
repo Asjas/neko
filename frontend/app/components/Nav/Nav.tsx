@@ -8,7 +8,7 @@ export default function Nav() {
   return (
     <nav>
       <ul className="flex-col hidden p-0 m-0 text-right uppercase list-none md:flex">
-        <li className="w-auto">
+        <li className="mb-1">
           <NavLink
             className={(props: NavLinkProps) =>
               `text-xl text-white p-1 rounded-sm tracking-wide font-medium no-underline ${
@@ -20,41 +20,21 @@ export default function Nav() {
             Home
           </NavLink>
         </li>
-        <li>
-          <NavLink
-            className={(props: NavLinkProps) =>
-              `text-xl text-white p-1 rounded-sm tracking-wide font-medium no-underline ${
-                props.isActive ? "nav-link__active" : "opacity-50 hover:opacity-100"
-              }`
-            }
-            to="/technology"
+        <li className="mb-1">
+          <a
+            className="p-1 text-xl font-medium tracking-wide text-white no-underline rounded-sm opacity-50 hover:opacity-100"
+            href="/#technology"
           >
             Technology
-          </NavLink>
+          </a>
         </li>
-        <li>
-          <NavLink
-            className={(props: NavLinkProps) =>
-              `text-xl text-white p-1 rounded-sm no-underline tracking-wide font-medium ${
-                props.isActive ? "nav-link__active" : "opacity-50 hover:opacity-100"
-              }`
-            }
-            to="/sunglasses"
+        <li className="mb-1">
+          <a
+            className="p-1 text-xl font-medium tracking-wide text-white no-underline rounded-sm opacity-50 hover:opacity-100"
+            href="/#catalogue"
           >
-            Sunglasses
-          </NavLink>
-        </li>
-        <li>
-          <NavLink
-            className={(props: NavLinkProps) =>
-              `text-xl text-white p-1 rounded-sm tracking-wide font-medium no-underline ${
-                props.isActive ? "nav-link__active" : "opacity-50 hover:opacity-100"
-              }`
-            }
-            to="/prescription-frames"
-          >
-            Prescription Frames
-          </NavLink>
+            Catalogue
+          </a>
         </li>
         <li>
           <NavLink

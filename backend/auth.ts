@@ -1,5 +1,5 @@
-import { createAuth } from "@keystone-next/auth";
-import { statelessSessions } from "@keystone-next/keystone/session";
+import { createAuth } from "@keystone-6/auth";
+import { statelessSessions } from "@keystone-6/core/session";
 
 let sessionSecret = process.env.SESSION_SECRET;
 

@@ -1,16 +1,18 @@
 import ProductCategory from "../ProductCategory/ProductCategory";
 
-export default function ProductCategories() {
-  const productCategories = [
-    { id: 1, title: "Leopard", totalProducts: 53, imageSrc: "/images/cheetah-catalogue.jpg", imageAlt: "Leopard" },
-    { id: 2, title: "Serval", totalProducts: 9, imageSrc: "/images/cheetah-catalogue.jpg", imageAlt: "Serval" },
-    { id: 3, title: "Cheetah", totalProducts: 22, imageSrc: "/images/cheetah-catalogue.jpg", imageAlt: "Cheetah" },
-    { id: 4, title: "Lynx", totalProducts: 101, imageSrc: "/images/cheetah-catalogue.jpg", imageAlt: "Lynx" },
-  ];
+interface Catalogue {
+  id: string;
+  name: string;
+  catalogueItemCount: number;
+  image?: {
+    url: string;
+  };
+}
 
+export default function ProductCategories({ catalogues }: { catalogues: Catalogue[] }) {
   return (
     <section className="flex flex-wrap gap-8 mb-40 auto-cols-fr">
-      {productCategories.map((productCategory) => (
+      {catalogues.map((productCategory) => (
         <ProductCategory key={productCategory.id} productCategory={productCategory} />
       ))}
     </section>

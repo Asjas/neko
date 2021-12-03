@@ -6,9 +6,19 @@
   pointer-events: none;
 }
 
+* {
+  scroll-margin-top: 40px;
+}
+
 html,
 body {
   height: 100%;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
 }
 
 /* Custom Scrollbar Styles */
@@ -30,6 +40,28 @@ body::-webkit-scrollbar-thumb {
   border: hsl(37deg 100% 50%);
 }
 
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+  letter-spacing: inherit;
+  word-spacing: inherit;
+}
+
+/* More sensible line-wrapping */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+  hyphens: auto;
+}
+
 .stack {
   --margin-top: 1.5rem;
   display: flex;
@@ -43,4 +75,20 @@ body::-webkit-scrollbar-thumb {
 
 .stack > * + * {
   margin-top: var(--margin-top);
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }

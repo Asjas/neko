@@ -1,10 +1,10 @@
 {
   "name": "neko-cms",
   "scripts": {
-    "dev": "keystone-next dev",
-    "start": "keystone-next start",
-    "build": "keystone-next build",
-    "postinstall": "keystone-next postinstall",
+    "dev": "keystone dev",
+    "start": "keystone start",
+    "build": "keystone build",
+    "postinstall": "keystone postinstall",
     "check-types": "tsc",
     "lint": "eslint --ext .js,.mjs,.ts,.tsx .",
     "lint-fix": "npm run lint -- --fix",
@@ -14,9 +14,10 @@
     "validate": "npm-run-all --parallel check-types check-format lint build"
   },
   "dependencies": {
-    "@keystone-next/auth": "37.0.0",
-    "@keystone-next/fields-document": "14.0.0",
-    "@keystone-next/keystone": "29.0.0",
+    "@keystone-6/auth": "1.0.0",
+    "@keystone-6/document-renderer": "1.0.0",
+    "@keystone-6/fields-document": "1.0.0",
+    "@keystone-6/core": "1.0.0",
     "dotenv": "10.0.0"
   },
   "devDependencies": {

@@ -1,4 +1,5 @@
-import type { MetaFunction } from "remix";
+import { useLoaderData } from "remix";
+import type { LoaderFunction, MetaFunction } from "remix";
 
 import Header from "../components/Header";
 import VideoPlayer from "../components/VideoPlayer";
@@ -13,16 +14,45 @@ export const meta: MetaFunction = () => ({
   description: "Challenge the limits with Neko EYEWEAR.",
 });
 
+export let loader: LoaderFunction = async () => {
+  const response = await fetch("http://localhost:3000/api/graphql", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      query: `
+        {
+          catalogues {
+            id
+            name
+            image {
+              url
+            }
+            catalogueItemCount
+          }
+        }
+      `,
+    }),
+  });
+
+  return response.json();
+};
+
 export default function Index() {
+  const {
+    data: { catalogues },
+  } = useLoaderData();
+
   return (
     <>
       <Header />
 
       <main>
-        <section className="px-2 py-10 bg-secondary lg:pt-16 lg:pb-28 md:px-6 lg:px-16">
+        <section className="px-2 py-10 bg-secondary lg:py-16 md:px-6 lg:px-16">
           <div className="mx-auto max-w-7xl">
             <div className="flex flex-col">
-              <h2 className="text-base font-bold tracking-wider uppercase text-primary">Design & Technology</h2>
+              <h2 id="technology" className="text-base font-bold tracking-wider uppercase text-primary">
+                Design & Technology
+              </h2>
               <p className="my-8 text-3xl font-semibold text-white lg:w-8/12 lg:text-8xl">
                 A radically original composition.
               </p>
@@ -38,26 +68,29 @@ export default function Index() {
               </ClientOnly>
             </div>
 
-            <div className="flex flex-col items-center w-full pt-32 mx-auto max-w-7xl xl:w-9/12">
+            <div className="flex flex-col items-center w-full pt-24 mx-auto max-w-7xl xl:w-9/12">
               <div className="orange-dot"></div>
               <h2 className="text-3xl font-semibold tracking-wider text-center text-white md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-8xl">
                 Wear it with ease and comfort
               </h2>
             </div>
 
-            <section className="hidden mb-20 max-w-7xl lg:block">
+            <section className="hidden mb-14 max-w-7xl lg:block">
               <ProductFeaturesShowcase />
             </section>
           </div>
         </section>
 
         <section className="bg-white">
-          <div className="px-4 py-16 mx-auto max-w-7xl sm:py-24 sm:px-6 lg:px-8">
+          <div className="px-4 py-16 mx-auto max-w-7xl mm:py-20 sm:px-6 lg:px-8">
             <div className="text-center">
               <p className="text-base font-semibold tracking-wider uppercase drop-shadow-sm text-primary">
                 Shop your favourite style
               </p>
-              <h2 className="mt-1 text-4xl font-extrabold drop-shadow-2xl sm:text-5xl sm:tracking-tight lg:text-6xl">
+              <h2
+                id="catalogue"
+                className="mt-1 text-4xl font-extrabold drop-shadow-2xl sm:text-5xl sm:tracking-tight lg:text-6xl"
+              >
                 Experience the world and beyond
               </h2>
               <p className="max-w-xl mx-auto mt-5 text-xl tracking-wide text-gray-700">
@@ -68,7 +101,7 @@ export default function Index() {
         </section>
 
         <section className="px-4 mx-auto bg-white sm:px-6 lg:px-8 max-w-7xl">
-          <ProductCategories />
+          <ProductCategories catalogues={catalogues} />
         </section>
       </main>
 

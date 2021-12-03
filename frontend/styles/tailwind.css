@@ -104,6 +104,10 @@
     @apply relative inline-block w-10 h-10 border-4 border-solid rounded-full opacity-25 right-5 bottom-12 bg-primary border-primary;
   }
 
+  .catalogue-item:hover .icon-hover {
+    @apply flex items-center justify-center;
+  }
+
   .footer-heading {
     @apply -translate-x-6;
   }
