@@ -43,15 +43,25 @@ model CatalogueItem {
 }
 
 model Technology {
-  id     String @id @default(cuid())
-  field1 String @default("")
-  field2 String @default("")
-  field3 String @default("")
-  field4 String @default("")
+  id             String @id @default(cuid())
+  field1_heading String @default("")
+  field1_content String @default("")
+  field2_heading String @default("")
+  field2_content String @default("")
+  field3_heading String @default("")
+  field3_content String @default("")
+  field4_heading String @default("")
+  field4_content String @default("")
 }
 
 model Page {
   id      String @id @default(cuid())
   name    String @default("")
   content Json   @default("[{\"type\":\"paragraph\",\"children\":[{\"text\":\"\"}]}]")
+}
+
+model SocialMediaIcon {
+  id   String @id @default(cuid())
+  name String @default("")
+  url  String @default("")
 }

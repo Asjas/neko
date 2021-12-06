@@ -23,7 +23,7 @@ export default function Nav() {
         <li className="mb-1">
           <a
             className="p-1 text-xl font-medium tracking-wide text-white no-underline rounded-sm opacity-50 hover:opacity-100"
-            href="/#technology"
+            href="#technology"
           >
             Technology
           </a>
@@ -31,7 +31,7 @@ export default function Nav() {
         <li className="mb-1">
           <a
             className="p-1 text-xl font-medium tracking-wide text-white no-underline rounded-sm opacity-50 hover:opacity-100"
-            href="/#catalogue"
+            href="#catalogue"
           >
             Catalogue
           </a>

@@ -29,6 +29,21 @@ export let loader: LoaderFunction = async () => {
             }
             catalogueItemCount
           }
+          technologies {
+            field1_heading
+            field1_content
+            field2_heading
+            field2_content
+            field3_heading
+            field3_content
+            field4_heading
+            field4_content
+          }
+          socialMediaIcons {
+            id
+            name
+            url
+          }
         }
       `,
     }),
@@ -39,7 +54,7 @@ export let loader: LoaderFunction = async () => {
 
 export default function Index() {
   const {
-    data: { catalogues },
+    data: { catalogues, technologies, socialMediaIcons },
   } = useLoaderData();
 
   return (
@@ -76,7 +91,7 @@ export default function Index() {
             </div>
 
             <section className="hidden mb-14 max-w-7xl lg:block">
-              <ProductFeaturesShowcase />
+              <ProductFeaturesShowcase technologies={technologies} />
             </section>
           </div>
         </section>
@@ -105,7 +120,7 @@ export default function Index() {
         </section>
       </main>
 
-      <Footer />
+      <Footer socialMediaIcons={socialMediaIcons} />
     </>
   );
 }

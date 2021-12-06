@@ -59,7 +59,8 @@ const navigation = {
   ],
 };
 
-export default function Footer() {
+export default function Footer({ socialMediaIcons }) {
+  console.log(socialMediaIcons[0]);
   return (
     <footer className="bg-black" aria-labelledby="footer-heading">
       <h2 id="footer-heading" className="sr-only">

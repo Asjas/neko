@@ -24,6 +24,11 @@ export let loader: LoaderFunction = async () => {
               document
             }
           }
+          socialMediaIcons {
+            id
+            name
+            url
+          }
         }
       `,
     }),
@@ -34,7 +39,7 @@ export let loader: LoaderFunction = async () => {
 
 export default function About() {
   const {
-    data: { page },
+    data: { page, socialMediaIcons },
   } = useLoaderData();
 
   return (
@@ -45,7 +50,7 @@ export default function About() {
           <DocumentRenderer document={page.content.document} />
         </article>
       </main>
-      <Footer />
+      <Footer socialMediaIcons={socialMediaIcons} />
     </>
   );
 }

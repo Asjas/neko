@@ -284,10 +284,14 @@ input CatalogueRelateToOneForCreateInput {
 
 type Technology {
   id: ID!
-  field1: String
-  field2: String
-  field3: String
-  field4: String
+  field1_heading: String
+  field1_content: String
+  field2_heading: String
+  field2_content: String
+  field3_heading: String
+  field3_content: String
+  field4_heading: String
+  field4_content: String
 }
 
 input TechnologyWhereUniqueInput {
@@ -299,25 +303,37 @@ input TechnologyWhereInput {
   OR: [TechnologyWhereInput!]
   NOT: [TechnologyWhereInput!]
   id: IDFilter
-  field1: StringFilter
-  field2: StringFilter
-  field3: StringFilter
-  field4: StringFilter
+  field1_heading: StringFilter
+  field1_content: StringFilter
+  field2_heading: StringFilter
+  field2_content: StringFilter
+  field3_heading: StringFilter
+  field3_content: StringFilter
+  field4_heading: StringFilter
+  field4_content: StringFilter
 }
 
 input TechnologyOrderByInput {
   id: OrderDirection
-  field1: OrderDirection
-  field2: OrderDirection
-  field3: OrderDirection
-  field4: OrderDirection
+  field1_heading: OrderDirection
+  field1_content: OrderDirection
+  field2_heading: OrderDirection
+  field2_content: OrderDirection
+  field3_heading: OrderDirection
+  field3_content: OrderDirection
+  field4_heading: OrderDirection
+  field4_content: OrderDirection
 }
 
 input TechnologyUpdateInput {
-  field1: String
-  field2: String
-  field3: String
-  field4: String
+  field1_heading: String
+  field1_content: String
+  field2_heading: String
+  field2_content: String
+  field3_heading: String
+  field3_content: String
+  field4_heading: String
+  field4_content: String
 }
 
 input TechnologyUpdateArgs {
@@ -326,10 +342,14 @@ input TechnologyUpdateArgs {
 }
 
 input TechnologyCreateInput {
-  field1: String
-  field2: String
-  field3: String
-  field4: String
+  field1_heading: String
+  field1_content: String
+  field2_heading: String
+  field2_content: String
+  field3_heading: String
+  field3_content: String
+  field4_heading: String
+  field4_content: String
 }
 
 type Page {
@@ -372,6 +392,46 @@ input PageUpdateArgs {
 input PageCreateInput {
   name: String
   content: JSON
+}
+
+type SocialMediaIcon {
+  id: ID!
+  name: String
+  url: String
+}
+
+input SocialMediaIconWhereUniqueInput {
+  id: ID
+}
+
+input SocialMediaIconWhereInput {
+  AND: [SocialMediaIconWhereInput!]
+  OR: [SocialMediaIconWhereInput!]
+  NOT: [SocialMediaIconWhereInput!]
+  id: IDFilter
+  name: StringFilter
+  url: StringFilter
+}
+
+input SocialMediaIconOrderByInput {
+  id: OrderDirection
+  name: OrderDirection
+  url: OrderDirection
+}
+
+input SocialMediaIconUpdateInput {
+  name: String
+  url: String
+}
+
+input SocialMediaIconUpdateArgs {
+  where: SocialMediaIconWhereUniqueInput!
+  data: SocialMediaIconUpdateInput!
+}
+
+input SocialMediaIconCreateInput {
+  name: String
+  url: String
 }
 
 """
@@ -424,6 +484,21 @@ type Mutation {
   updatePages(data: [PageUpdateArgs!]!): [Page]
   deletePage(where: PageWhereUniqueInput!): Page
   deletePages(where: [PageWhereUniqueInput!]!): [Page]
+  createSocialMediaIcon(data: SocialMediaIconCreateInput!): SocialMediaIcon
+  createSocialMediaIcons(
+    data: [SocialMediaIconCreateInput!]!
+  ): [SocialMediaIcon]
+  updateSocialMediaIcon(
+    where: SocialMediaIconWhereUniqueInput!
+    data: SocialMediaIconUpdateInput!
+  ): SocialMediaIcon
+  updateSocialMediaIcons(data: [SocialMediaIconUpdateArgs!]!): [SocialMediaIcon]
+  deleteSocialMediaIcon(
+    where: SocialMediaIconWhereUniqueInput!
+  ): SocialMediaIcon
+  deleteSocialMediaIcons(
+    where: [SocialMediaIconWhereUniqueInput!]!
+  ): [SocialMediaIcon]
   endSession: Boolean!
   authenticateUserWithPassword(
     email: String!
@@ -494,6 +569,14 @@ type Query {
   ): [Page!]
   page(where: PageWhereUniqueInput!): Page
   pagesCount(where: PageWhereInput! = {}): Int
+  socialMediaIcons(
+    where: SocialMediaIconWhereInput! = {}
+    orderBy: [SocialMediaIconOrderByInput!]! = []
+    take: Int
+    skip: Int! = 0
+  ): [SocialMediaIcon!]
+  socialMediaIcon(where: SocialMediaIconWhereUniqueInput!): SocialMediaIcon
+  socialMediaIconsCount(where: SocialMediaIconWhereInput! = {}): Int
   keystone: KeystoneMeta!
   authenticatedItem: AuthenticatedItem
 }

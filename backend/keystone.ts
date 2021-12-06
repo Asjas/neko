@@ -8,6 +8,7 @@ import { Catalogue } from "./schemas/Catalogue";
 import { CatalogueItem } from "./schemas/CatalogueItem";
 import { Technology } from "./schemas/Technology";
 import { Page } from "./schemas/Page";
+import { SocialMediaIcon } from "./schemas/SocialMediaIcon";
 
 export default withAuth(
   config({
@@ -30,6 +31,7 @@ export default withAuth(
       CatalogueItem,
       Technology,
       Page,
+      SocialMediaIcon,
     },
     images: {
       upload: "local",
