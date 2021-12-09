@@ -1,0 +1,4 @@
+url: http://localhost:5000
+tunnel: 9391b50f-2cf1-46bb-ba8a-0d8527a2b001
+credentials-file: /app/.cloudflared/9391b50f-2cf1-46bb-ba8a-0d8527a2b001.json
+logfile: /app/.cloudflared/log/cloudflared.log
