@@ -17,6 +17,4 @@ RUN npm ci
 
 RUN npm run build
 
-RUN chmod +x ./scripts/start.sh
-
-CMD ["./scripts/start.sh"]
+CMD ["./node_modules/bin/keystone", "start"]
