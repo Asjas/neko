@@ -5,6 +5,7 @@
     "start": "keystone start",
     "build": "keystone build",
     "postinstall": "keystone postinstall",
+    "prisma:migrate": "keystone prisma migrate deploy",
     "check-types": "tsc",
     "lint": "eslint --ext .js,.mjs,.ts,.tsx .",
     "lint-fix": "npm run lint -- --fix",
