@@ -11,13 +11,13 @@ export const meta: MetaFunction = () => ({
 });
 
 export let loader: LoaderFunction = async () => {
-  const response = await fetch("http://localhost:3000/api/graphql", {
+  const response = await fetch(`${BACKEND_URL}/api/graphql`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
       query: `
         query GET_ABOUT_PAGE {
-          page(where: {id: "ckwq3mb1j00385kiogn5ybf78"}) {
+          pages (where: { name: {equals: "About Us"}}) {
             id
             name
             content {
@@ -39,7 +39,7 @@ export let loader: LoaderFunction = async () => {
 
 export default function About() {
   const {
-    data: { page, socialMediaIcons },
+    data: { pages, socialMediaIcons },
   } = useLoaderData();
 
   return (
@@ -47,7 +47,7 @@ export default function About() {
       <Header />
       <main className="my-16">
         <article className="mx-auto prose lg:prose-xl">
-          <DocumentRenderer document={page.content.document} />
+          <DocumentRenderer document={pages[0].content.document} />
         </article>
       </main>
       <Footer socialMediaIcons={socialMediaIcons} />

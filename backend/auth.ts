@@ -1,6 +1,8 @@
 import { createAuth } from "@keystone-6/auth";
 import { statelessSessions } from "@keystone-6/core/session";
 
+import { sendPasswordResetEmail } from "./lib/mail";
+
 let sessionSecret = process.env.SESSION_SECRET;
 
 if (!sessionSecret) {
@@ -19,6 +21,11 @@ const { withAuth } = createAuth({
   secretField: "password",
   initFirstItem: {
     fields: ["name", "email", "password"],
+  },
+  passwordResetLink: {
+    async sendToken(args) {
+      await sendPasswordResetEmail(args.token, args.identity);
+    },
   },
 });
 

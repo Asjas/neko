@@ -1,7 +1,8 @@
 name = "neko-global"
 type = "javascript"
 usage_model = "unbound"
-compatibility_date = "2021-12-03"
+compatibility_date = "2021-12-09"
+vars = { BACKEND_URL = "https://admin.neko.global" }
 
 zone_id = "68564a31f3b81700e29b4c2820be5a9a"
 account_id = "d34e365e96c3cd636081f05b0a6b031a"
