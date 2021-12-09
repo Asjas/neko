@@ -15,6 +15,7 @@ export default withAuth(
     db: {
       provider: "postgresql",
       url: process.env.DATABASE_URL!,
+      useMigrations: true,
     },
     server: {
       cors: {
