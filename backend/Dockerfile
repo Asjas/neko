@@ -17,4 +17,6 @@ RUN npm ci
 
 RUN npm run build
 
-CMD ["./scripts/startup.sh"]
+RUN chmod +x ./scripts/start.sh
+
+CMD ["./scripts/start.sh"]
