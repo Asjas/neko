@@ -7,5 +7,4 @@ services:
     restart: always
     ports:
       - "7000:5000"
-    networks:
-      - mellins
+    network_mode: "host"
