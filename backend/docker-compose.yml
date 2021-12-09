@@ -1,19 +1,11 @@
 version: "2.4"
 
 services:
-  db:
-    container_name: neko-db
-    image: postgres:14.1-alpine
-    ports:
-      - ${DB_PORT}:5432
-    volumes:
-      - db-data:/var/lib/postgresql
+  neko-backend:
+    container_name: neko-backend
+    image: asjas/neko-backend:latest
     restart: always
-    environment:
-      POSTGRES_USER: ${DB_USER}
-      POSTGRES_PASSWORD: ${DB_PASS}
-      POSTGRES_DB: ${DB}
-
-volumes:
-  db-data:
-    external: false
+    ports:
+      - "7000:5000"
+    networks:
+      - mellins
