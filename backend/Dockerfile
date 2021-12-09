@@ -17,6 +17,4 @@ RUN npm ci
 
 RUN npm run build
 
-RUN cloudflared tunnel --config /app/.cloudflared/config.yaml run
-
-CMD ["./node_modules/.bin/keystone-next", "start"]
+CMD ["./node_modules/.bin/keystone", "start"]
