@@ -17,4 +17,4 @@ RUN npm ci
 
 RUN npm run build
 
-CMD ["./node_modules/bin/keystone", "start"]
+CMD ["./node_modules/.bin/keystone", "start"]
