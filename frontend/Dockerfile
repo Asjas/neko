@@ -3,6 +3,7 @@ FROM node:lts
 EXPOSE 6000
 
 ARG BACKEND_URL
+ARG PORT
 
 RUN mkdir /app
 WORKDIR /app
