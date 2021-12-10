@@ -4,6 +4,7 @@ EXPOSE 6000
 
 ARG BACKEND_URL
 ARG PORT
+ARG NODE_ENV
 
 RUN mkdir /app
 WORKDIR /app
@@ -12,4 +13,4 @@ RUN npm ci
 
 RUN npm run build
 
-CMD ["cross-env NODE_ENV=production node", "server/index.js"]
+CMD ["node", "server/index.js"]
