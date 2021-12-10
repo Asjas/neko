@@ -1,10 +1,13 @@
 version: "2.4"
 
 services:
+  neko-frontend:
+    container_name: neko-frontend
+    image: asjas/neko-frontend:latest
+    restart: always
+    network_mode: "host"
   neko-backend:
     container_name: neko-backend
     image: asjas/neko-backend:latest
     restart: always
-    ports:
-      - "7000:5000"
     network_mode: "host"
