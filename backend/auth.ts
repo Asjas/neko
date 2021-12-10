@@ -22,11 +22,6 @@ const { withAuth } = createAuth({
   initFirstItem: {
     fields: ["name", "email", "password"],
   },
-  passwordResetLink: {
-    async sendToken(args) {
-      await sendPasswordResetEmail(args.token, args.identity);
-    },
-  },
 });
 
 const sessionMaxAge = 60 * 60 * 24 * 30; // 30 days
