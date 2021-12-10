@@ -1,6 +1,5 @@
 const path = require("path");
 const express = require("express");
-const compression = require("compression");
 const morgan = require("morgan");
 const { createRequestHandler } = require("@remix-run/express");
 
@@ -8,7 +7,6 @@ const MODE = process.env.NODE_ENV;
 const BUILD_DIR = path.join(process.cwd(), "server/build");
 
 let app = express();
-app.use(compression());
 
 // You may want to be more aggressive with this caching
 app.use(express.static("public", { maxAge: "1h" }));
