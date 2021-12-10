@@ -30,7 +30,7 @@ export function links() {
 }
 
 export let loader: LoaderFunction = async ({ params: { products } }) => {
-  const response = await fetch(`${BACKEND_URL}/api/graphql`, {
+  const response = await fetch(`${process.env.BACKEND_URL}/api/graphql`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({

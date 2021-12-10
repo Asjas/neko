@@ -16,7 +16,7 @@ export const meta: MetaFunction = ({ params }: { params: any }) => {
 };
 
 export let loader: LoaderFunction = async () => {
-  const response = await fetch(`${BACKEND_URL}/api/graphql`, {
+  const response = await fetch(`${process.env.BACKEND_URL}/api/graphql`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
