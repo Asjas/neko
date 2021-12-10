@@ -2,6 +2,8 @@ import { Outlet, useLoaderData } from "remix";
 import type { LoaderFunction, MetaFunction } from "remix";
 
 import Header from "~/components/Header";
+import Nav from "~/components/Nav";
+import NavLink from "~/components/NavLink";
 import Footer from "~/components/Footer";
 
 export const meta: MetaFunction = ({ params }: { params: any }) => {
@@ -58,7 +60,15 @@ export default function Team() {
 
   return (
     <div>
-      <Header />
+      <Header>
+        <Nav>
+          <NavLink to="/">Home</NavLink>
+          <NavLink to="/catalogue/leopard">Leopard</NavLink>
+          <NavLink to="/catalogue/cheetah">Cheetah</NavLink>
+          <NavLink to="/catalogue/lynx">Lynx</NavLink>
+          <NavLink to="/catalogue/serval">Serval</NavLink>
+        </Nav>
+      </Header>
 
       <main>
         <Outlet />

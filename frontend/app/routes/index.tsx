@@ -2,6 +2,8 @@ import { useLoaderData } from "remix";
 import type { LoaderFunction, MetaFunction } from "remix";
 
 import Header from "../components/Header";
+import Nav from "../components/Nav";
+import NavLink from "../components/NavLink";
 import VideoPlayer from "../components/VideoPlayer";
 import ProductFeaturesShowcase from "../components/ProductFeaturesShowcase";
 import ProductCategories from "../components/ProductCategories";
@@ -59,7 +61,18 @@ export default function Index() {
 
   return (
     <>
-      <Header />
+      <Header>
+        <Nav>
+          <NavLink to="/">Home</NavLink>
+          <NavLink to="#technology" fragmentedNav={true}>
+            Technology
+          </NavLink>
+          <NavLink to="#catalogue" fragmentedNav={true}>
+            Catalogue
+          </NavLink>
+          <NavLink to="/about">About Us</NavLink>
+        </Nav>
+      </Header>
 
       <main>
         <section className="px-2 py-10 bg-secondary lg:py-16 md:px-6 lg:px-16">

@@ -1,8 +1,11 @@
+import type { ReactNode } from "react";
 import { NavLink } from "remix";
 
-import Nav from "../Nav";
+interface HeaderProps {
+  children: ReactNode;
+}
 
-export default function Header() {
+export default function Header({ children }: HeaderProps) {
   return (
     <header>
       <div className="bg-local bg-black bg-center bg-no-repeat bg-cover bg-hero-image aspect-w-16 aspect-h-9">
@@ -63,7 +66,7 @@ export default function Header() {
                 </g>
               </svg>
             </NavLink>
-            <Nav />
+            {children}
           </div>
           <div className="self-end w-6/12 translate-x-4 translate-y-20 sm:translate-y-40 md:translate-y-24 md:w-5/12 lg:translate-y-36 xl:translate-y-64 lg:translate-x-14">
             <h1 className="w-10/12 text-2xl font-bold text-right text-white lg:w-11/12 3xl:w-10/12 md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl 3xl:text-9xl">

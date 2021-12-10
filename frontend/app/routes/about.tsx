@@ -3,6 +3,8 @@ import { useLoaderData } from "remix";
 import type { LoaderFunction, MetaFunction } from "remix";
 
 import Header from "../components/Header";
+import Nav from "../components/Nav";
+import NavLink from "../components/NavLink";
 import Footer from "../components/Footer";
 
 export const meta: MetaFunction = () => ({
@@ -44,7 +46,13 @@ export default function About() {
 
   return (
     <>
-      <Header />
+      <Header>
+        <Nav>
+          <NavLink to="/">Home</NavLink>
+          <NavLink to="/about">About Us</NavLink>
+        </Nav>
+      </Header>
+
       <main className="my-16">
         <article className="mx-auto prose lg:prose-xl">
           <DocumentRenderer document={pages[0].content.document} />
