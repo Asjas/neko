@@ -7,7 +7,7 @@
     "start:dev": "cross-env NODE_ENV=development node server/index.js",
     "build": "npm run build:css && NODE_ENV=production remix build",
     "dev": "remix watch",
-    "start": "concurrently \"npm run watch:css\" \"npm run server:dev\"",
+    "start": "concurrently \"npm run watch:css\" \"npm run start:dev\"",
     "watch:css": "postcss styles --base styles --dir app/styles -w",
     "build:css": "postcss styles --base styles --dir app/styles --env production",
     "clean": "rimraf build/ dist/ .cache/ public/build/",
