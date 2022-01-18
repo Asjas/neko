@@ -28,8 +28,8 @@ export default function ProductCategory({ productCategory }: { productCategory: 
         </div>
         <div className="flex-grow w-full overflow-hidden bg-white sm:aspect-w-2 sm:aspect-h-1 sm:h-64 lg:aspect-w-1 lg:aspect-h-1">
           <img
-            src={productCategory.name}
-            alt={`https://admin.neko.global/${productCategory.image?.url}`}
+            src={`https://admin.neko.global${productCategory.image?.url}`}
+            alt={productCategory.name}
             className="object-cover object-center w-full h-full rounded-b-md"
           />
         </div>
